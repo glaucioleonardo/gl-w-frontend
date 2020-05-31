@@ -1,5 +1,5 @@
 # gl-w-frontend #
-[![version](https://img.shields.io/badge/version-1.3.2-green.svg)](https://www.npmjs.com/package/gl-w-frontend)
+[![version](https://img.shields.io/badge/version-1.4.1-green.svg)](https://www.npmjs.com/package/gl-w-frontend)
 
 ### What is this repository for? ###
 This package is a common code for using among web front-end development 
@@ -41,7 +41,9 @@ If you are using only browser version:
 * Attachment
 * Browser (Check version, fullscreen)
 * ComboBox / Autocomplete
+* Date / Time
 * Dom Elements
+* String
 
 Other features is going to be included  frequently.
 
@@ -50,3 +52,5 @@ I'm really thankful for those packages creators!
 * [Screenfull](https://www.npmjs.com/package/screenfull): @github/sindresorhus
 * [jquery-ui-dist](https://github.com/jquery/jquery-ui/graphs/contributors)
 * [jquery](https://github.com/jquery/jquery/graphs/contributors)
+* [moment](https://github.com/moment/moment)
+* [moment-range](https://github.com/rotaready/moment-range)
