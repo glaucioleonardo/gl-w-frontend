@@ -44,3 +44,14 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+/.idea/
+/.idea/codeStyles/
+/.idea/inspectionProfiles/
+/.idea/libraries/
+/.idea/shelf/
+/.idea/gl-w-frontend.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/watcherTasks.xml
+/.idea/workspace.xml

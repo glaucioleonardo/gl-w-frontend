@@ -22,7 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="485ffebe-d99f-4fd4-9ad0-17080969f225" name="Default Changelist" comment="Included combobox/autocomplete (jquery-ui) tools and updated README.md" />
+    <list default="true" id="485ffebe-d99f-4fd4-9ad0-17080969f225" name="Default Changelist" comment="Return component names to Capitalized way.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +39,25 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="github/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="NamedScopeManager">
@@ -109,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590893616695</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Return component names to Capitalized way.">
+      <created>1590905429456</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590905429456</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,11 +153,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Included combobox/autocomplete (jquery-ui) tools and updated README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Included combobox/autocomplete (jquery-ui) tools and updated README.md" />
+    <MESSAGE value="Return component names to Capitalized way." />
+    <option name="LAST_COMMIT_MESSAGE" value="Return component names to Capitalized way." />
   </component>
   <component name="WindowStateProjectService">
     <state x="553" y="281" key="#File_Watchers" timestamp="1590884070860">
@@ -180,10 +210,10 @@
       <screen x="0" y="23" width="1360" height="745" />
     </state>
     <state x="189" y="34" key="SettingsEditor/0.23.1360.745@0.23.1360.745" timestamp="1590893212288" />
-    <state x="280" y="135" key="Vcs.Push.Dialog.v2" timestamp="1590893647923">
+    <state x="280" y="135" key="Vcs.Push.Dialog.v2" timestamp="1590905624377">
       <screen x="0" y="23" width="1360" height="745" />
     </state>
-    <state x="280" y="135" key="Vcs.Push.Dialog.v2/0.23.1360.745@0.23.1360.745" timestamp="1590893647923" />
+    <state x="280" y="135" key="Vcs.Push.Dialog.v2/0.23.1360.745@0.23.1360.745" timestamp="1590905624377" />
     <state x="422" y="291" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1590823402643">
       <screen x="0" y="23" width="1360" height="745" />
     </state>
