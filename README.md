@@ -1,29 +1,52 @@
-# README #
-
-This README would normally document whatever steps are necessary to get your application up and running.
+# gl-w-frontend #
+[![version](https://img.shields.io/badge/version-1.3.2-green.svg)](https://www.npmjs.com/package/gl-w-frontend)
 
 ### What is this repository for? ###
+This package is a common code for using among web front-end development 
+such as pure JavaScript, ES6+ and TypeScript.<br>
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+This package contains the types for using with Typescript.
 
 ### How do I get set up? ###
+ The easiest way to install this library is via npm using the following commands:
+* Latest version `npm install gl-w-frontend --save`;
+* [Available versions](https://www.npmjs.com/package/gl-w-frontend?activeTab=versions) `npm install gl-w-frontend@version --save`;
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
 
-### Contribution guidelines ###
+If you are using only browser version:
+* For ES5 version importing via <br>
+```
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <title>gl-w-frontend</title>
+    ...
+ </head>
+ <body>
+    ...
+    <!-- Include here -->
+    <script src="https://github.com/glaucioleonardo/gl-w-frontend/tree/master/lib/index.js"></script>
+    <!-- or just download this repo and refer to the index.js like this -->
+    <script src="js/index.js"></script>
+ </body>
+ </html>
+ ```
 
-* Writing tests
-* Code review
-* Other guidelines
+* In case you are using ES+, just use the `index.js` inside `lib/esm`
 
-### Who do I talk to? ###
+### Macro features ###
 
-* Repo owner or admin
-* Other community or team contact
+* Array
+* Attachment
+* Browser (Check version, fullscreen)
+* ComboBox / Autocomplete
+* Dom Elements
+
+Other features is going to be included  frequently.
+
+### Other packages used ###
+I'm really thankful for those packages creators!
+* [Screenfull](https://www.npmjs.com/package/screenfull): @github/sindresorhus
+* [jquery-ui-dist](https://github.com/jquery/jquery-ui/graphs/contributors)
+* [jquery](https://github.com/jquery/jquery/graphs/contributors)

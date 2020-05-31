@@ -1,15 +1,31 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "moduleResolution": "node",
+    "module": "commonJS",
     "target": "es5",
     "declaration": true,
     "sourceMap": true,
-    "outDir": "./dist"
+    "outDir": "lib",
+    "strict": true,
+    "lib": [
+      "dom",
+      "es5",
+      "scripthost",
+      "es2015.promise"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./@types"
+    ]
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "node_modules/jquery/dist/jquery.min.js",
+    "node_modules/jquery-ui-dist/jquery-ui.js",
+    "node_modules/screenfull/**/*"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules", "**/__tests__/*"
   ]
 }
