@@ -1,17 +1,23 @@
 {
   "name": "gl-w-frontend",
-  "version": "1.4.1",
-  "description": "Common code for using among web front-end development such as pure JavaScript, ES6+ and TypeScript",
-  "main": "lib/",
-  "types": "lib/",
+  "version": "2.0.0",
+  "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
+  "main": "lib/bundle.js",
+  "types": "lib/index.d.ts",
+  "module": "lib/index.js",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
     "clean": "shx rm -rf dist lib",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-clean": "npm run clean && tsc && tsc -m es6 --outDir lib/esm",
-    "build": "tsc && tsc -m es6 --outDir lib/esm",
+    "copy-assets": "copyfiles -a -u2 src/lib/assets/** lib",
+    "production": "npm run build && npm run copy-assets",
     "fast-build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "eslint . --ext .ts"
+    "test": "npm run production && npm pack",
+    "lint": "eslint . --ext .ts",
+    "build-index": "tsc -p ./tsconfig-index.json",
+    "build-es6": "tsc -p ./tsconfig-es6.json",
+    "build": "npm run build-es6 && npm run build-index"
   },
   "repository": {
     "type": "git",
@@ -27,36 +33,46 @@
     "autocomplete tool",
     "fullscreen",
     "attachment tool",
-    "dom tool"
+    "dom tool",
+    "excel",
+    "array",
+    "attachment",
+    "browser",
+    "combobox",
+    "autocomplete",
+    "date",
+    "dom elements",
+    "inputs",
+    "menu",
+    "string",
+    "url"
   ],
+  "bugs": "https://github.com/glaucioleonardo/gl-w-frontend/issues",
   "author": "Gláucio Leonardo Sant'ana",
   "license": "ISC",
-  "homepage": "https://glauciosantana.com",
+  "homepage": "https://www.glauciosantana.com",
   "dependencies": {
+    "core-js": "^3.6.5",
+    "inputmask": "^5.0.3",
     "jquery": "^3.5.1",
     "jquery-ui-dist": "^1.12.1",
     "moment": "^2.26.0",
     "moment-range": "^4.0.2",
-    "screenfull": "^5.0.2"
+    "rxjs": "^6.5.5",
+    "screenfull": "^5.0.2",
+    "xlsx": "^0.16.1"
   },
   "devDependencies": {
+    "@types/inputmask": "^4.0.1",
     "@types/jquery": "^3.3.38",
     "@types/jqueryui": "^1.12.13",
-    "@types/node": "^14.0.6",
-    "@typescript-eslint/eslint-plugin": "^3.0.2",
-    "@typescript-eslint/parser": "^3.0.2",
-    "awesome-typescript-loader": "^5.2.1",
-    "codelyzer": "^5.2.2",
+    "@types/node": "^14.0.11",
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^3.1.0",
+    "@typescript-eslint/parser": "^3.1.0",
     "eslint": "^7.1.0",
-    "path": "^0.12.7",
-    "prettier": "^2.0.5",
     "shx": "^0.3.2",
-    "ts-node": "~8.3.0",
-    "tslint": "^5.18.0",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "~3.7.5",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "tslint": "^6.1.2",
+    "typescript": "~3.7.5"
   }
 }
