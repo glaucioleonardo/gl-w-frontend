@@ -1,0 +1,11 @@
+declare class Remove {
+    duplicateLegacy(array: any[]): any[];
+    duplicate(array: any[], identification: any, sortIdentification?: string, asc?: boolean): Promise<any[]>;
+}
+export declare const ArrayRemove: Remove;
+declare class Sort {
+    get(array: object[], asc: boolean): Promise<any[]>;
+    byKey(array: any[], key: string, asc: boolean): Promise<any[]>;
+}
+export declare const ArraySort: Sort;
+export {};

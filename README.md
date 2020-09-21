@@ -116,6 +116,7 @@ the following method inform the folderUrl (optional parameter).
 * Browser (Check version, fullscreen)
 * ComboBox / Autocomplete
 * Date / Time
+* Image
 * Input
 * Dom Elements
 * String
