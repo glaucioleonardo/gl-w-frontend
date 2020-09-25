@@ -15,10 +15,6 @@ class Get {
     customDateNoUTC(date: IDate, format: string = 'DD/MM/YYYY'): Date {
         const dmy = this.dayMonthYear(date, format);
         return new Date(dmy.year, dmy.month, dmy.day, 0, 0, 0);
-
-        // const finalDate = this.customDate(date, format);
-        // const offSet = finalDate.getTimezoneOffset() * -1;
-        // return  moment.utc(finalDate, format).add(offSet, 'minute').toDate();
     }
     customDateNoUTCString(date: IDate, format: string = 'DD/MM/YYYY', outputFormat: string = 'DD/MM/YYYY'): string {
         const finalDate = this.customDate(date, format);

@@ -1,6 +1,6 @@
 {
   "name": "gl-w-frontend",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/bundle.js",
   "types": "lib/index.d.ts",
@@ -52,12 +52,12 @@
   "license": "ISC",
   "homepage": "https://www.glauciosantana.com",
   "dependencies": {
-    "inputmask": "^5.0.3",
-    "moment": "^2.26.0",
+    "inputmask": "^5.0.5",
+    "moment": "^2.29.0",
     "moment-range": "^4.0.2",
-    "rxjs": "^6.5.5",
+    "rxjs": "^6.6.2",
     "screenfull": "^5.0.2",
-    "xlsx": "^0.16.1"
+    "xlsx": "^0.16.7"
   },
   "devDependencies": {
     "@types/inputmask": "^4.0.1",
