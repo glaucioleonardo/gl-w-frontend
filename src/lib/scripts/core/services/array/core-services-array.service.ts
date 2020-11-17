@@ -11,7 +11,7 @@ class Remove {
         let uniqueArray = array.filter((identification, index) => {
             const _thing = JSON.stringify(identification);
             return index === array.findIndex(obj => {
-                return JSON.stringify(obj) === _thing;
+                    return JSON.stringify(obj) === _thing;
             });
         });
 

@@ -26,9 +26,21 @@ class Resize {
     const copyContext = canvasCopy.getContext("2d");
     // endregion
 
+    // // region Set context background
+    // if (ctx != null) {
+    //   console.log('Setting ctx background color');
+    //   ctx.fillStyle = '#FFF'
+    // }
+    // if (copyContext != null) {
+    //   console.log('Setting context copy background color');
+    //   copyContext.fillStyle = '#FFF'
+    // }
+    // // endregion
+
     // region Create original image
     const img = new Image();
     img.src = base64;
+    // img.style.backgroundColor = '#FFF'
     // endregion
 
     // region Determine new ratio based on max size
