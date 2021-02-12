@@ -4,6 +4,7 @@ export * from './scripts/core/services/attachment/core-services-attachment.servi
 export * from './scripts/core/services/browser/core-services-browser.service';
 export * from './scripts/core/services/combobox/core-services-combobox.service';
 export * from './scripts/core/services/date/core-services-date.service';
+export * from './scripts/core/services/data/core-services-data.service';
 export * from './scripts/core/services/elements/core-services-elements.service';
 export * from './scripts/core/services/image/core-services-image.service';
 export * from './scripts/core/services/input/core-services-input.service';
@@ -23,7 +24,7 @@ export * from './scripts/statics/fonts/statics.font.static';
 export * from './scripts/core/services/browser/core-services-browser.interface';
 export * from './scripts/core/services/combobox/core-services-combobox.interface';
 export * from './scripts/core/services/date/core-services-date.interface';
-export * from './scripts/core/services/date/core-services-date.interface';
+// export * from './scripts/core/services/data/core-services-data.interface';
 export * from './scripts/core/services/elements/core-services-elements.interface';
 export * from './scripts/core/services/input/core-services-input.interface';
 export * from './scripts/core/services/internationalization/core-services-internationalization.interface';
