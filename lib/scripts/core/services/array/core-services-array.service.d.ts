@@ -1,6 +1,8 @@
 declare class Remove {
     duplicateLegacy(array: any[]): any[];
     duplicate(array: any[], identification: any, sortIdentification?: string, asc?: boolean): Promise<any[]>;
+    notDuplicated(array: any[], asc?: boolean): Promise<any[]>;
+    notDuplicatedByKey(data: any[], identification: any, sortIdentification?: string, asc?: boolean): Promise<any[]>;
 }
 export declare const ArrayRemove: Remove;
 declare class Sort {

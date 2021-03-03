@@ -21,6 +21,40 @@ class Remove {
 
         return uniqueArray;
     }
+
+    async notDuplicated(array: any[], asc: boolean = true): Promise<any[]> {
+        const arrayWithoutDuplicates = [...new Set(array)];
+        let duplicates = [...array];
+        arrayWithoutDuplicates.forEach((item) => {
+            const i = duplicates.indexOf(item);
+            duplicates = duplicates
+              .slice(0, i)
+              .concat(duplicates.slice(i + 1, duplicates.length));
+        });
+
+        return await ArraySort.get(duplicates, asc);
+    }
+    async notDuplicatedByKey(data: any[], identification: any, sortIdentification?: string, asc: boolean = true): Promise<any[]> {
+        const array: any[] = []
+        for (const item of data) {
+            array.push(item[identification]);
+        }
+
+        const arrayWithoutDuplicates = [...new Set(array)];
+        let duplicates = [...array];
+        arrayWithoutDuplicates.forEach((item) => {
+            const i = duplicates.indexOf(item);
+            duplicates = duplicates
+              .slice(0, i)
+              .concat(duplicates.slice(i + 1, duplicates.length));
+        });
+
+        if (sortIdentification != null) {
+            return await ArraySort.byKey(duplicates, sortIdentification, asc);
+        } else {
+            return duplicates;
+        }
+    }
 }
 // tslint:disable-next-line:variable-name
 export const ArrayRemove = new Remove();
