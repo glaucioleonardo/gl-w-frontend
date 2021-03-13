@@ -8,6 +8,7 @@ export * from './scripts/core/services/elements/core-services-elements.service';
 export * from './scripts/core/services/image/core-services-image.service';
 export * from './scripts/core/services/input/core-services-input.service';
 export * from './scripts/core/services/internationalization/core-services-internationalization.service';
+export * from './scripts/core/services/number/core-services-number.service';
 export * from './scripts/core/services/string/core-services-string.service';
 export * from './scripts/core/services/url/core-services-url.service';
 export * from './scripts/services/export/excel/services-export-excel.service';

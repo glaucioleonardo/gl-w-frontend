@@ -5,6 +5,16 @@ import { IDate, IDateLocal, IDayMonthYear, IDaysOfMonth, IUnityOfTime, IWeeksOfM
 import { unitOfTime } from 'moment';
 
 class Get {
+    excelToDate(serialDate: number): Date {
+        const unixTimestamp = (serialDate - 25569) * 86400 // Converts Excel date to unix timestamp, assuming Mac/Windows Excel 2011 onwards
+        return moment.unix(unixTimestamp).toDate();
+    }
+    excelToDateNoUTC(serialDate: number): Date {
+        const date = this.excelToDate(serialDate)
+        const offSet = date.getTimezoneOffset();
+        return moment.utc(date).add(offSet, 'minute').toDate();
+    }
+
     customDate(date: IDate, format: string = 'DD/MM/YYYY'): Date {
         return moment(date, format).local(true).toDate();
     }

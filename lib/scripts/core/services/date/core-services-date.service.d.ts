@@ -1,6 +1,8 @@
 import { IDate, IDateLocal, IDayMonthYear, IDaysOfMonth, IWeeksOfMonth } from './core-services-date.interface';
 import { unitOfTime } from 'moment';
 declare class Get {
+    excelToDate(serialDate: number): Date;
+    excelToDateNoUTC(serialDate: number): Date;
     customDate(date: IDate, format?: string): Date;
     customDateString(date: IDate, format?: string, outputFormat?: string): string;
     customDateNoUTC(date: IDate, format?: string): Date;
