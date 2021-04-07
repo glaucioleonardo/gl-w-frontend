@@ -74,6 +74,16 @@ class Mask {
     return mask;
   }
 
+  customNumberPhone(mask: string, field: HTMLInputElement, rightAlign: boolean = false) {
+    Inputmask({
+      mask,
+      rightAlign,
+      placeholder: mask
+    }).mask(field);
+
+    return mask;
+  }
+
   remove(field: HTMLInputElement) {
     Inputmask.remove(field);
   }

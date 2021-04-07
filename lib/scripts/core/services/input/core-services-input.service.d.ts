@@ -5,6 +5,7 @@ declare class Mask {
     percentage(field: HTMLInputElement, allowMinus?: boolean, decimalSeparator?: TDecimalSeparators, rightAlign?: boolean, step?: number): string;
     numeric(field: HTMLInputElement, allowMinus?: boolean, decimalSeparator?: TDecimalSeparators, rightAlign?: boolean, step?: number): string;
     integer(field: HTMLInputElement, allowMinus?: boolean, rightAlign?: boolean, step?: number): string;
+    customNumberPhone(mask: string, field: HTMLInputElement, rightAlign?: boolean): string;
     remove(field: HTMLInputElement): void;
 }
 export declare const InputMask: Mask;

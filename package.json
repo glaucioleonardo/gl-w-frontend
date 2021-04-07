@@ -1,6 +1,6 @@
 {
   "name": "gl-w-frontend",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/bundle.js",
   "types": "lib/index.d.ts",

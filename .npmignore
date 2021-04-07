@@ -4,6 +4,7 @@
 **/webpack.config.js
 node_modules
 src
+test
 
 node_modules
 lib-esm
