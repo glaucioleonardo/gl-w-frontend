@@ -1,3 +1,4 @@
+import Decimal from 'decimal.js';
 import { UrlDecode } from '../url/core-services-url.service';
 import { TCurrencyNames, TCurrencySymbolTypes, TDecimalSeparators } from './core-services-string-interface';
 
@@ -119,12 +120,14 @@ class Converter {
 			}
 		}
 
-		decimalNumberToString(num: number, decimalOutput: TDecimalSeparators = '.'): string {
-			const value = Math.round((num + Number.EPSILON) * 100.0) / 100.0;
+		decimalNumberToString(num: number, decimalOutput: TDecimalSeparators = '.', places: number = 2): string {
+			const value = new Decimal(num);
+			const stringValue = value.toDecimalPlaces(places).toFixed(places);
+			const separator = decimalOutput === ',' ? '$1.' : '$1,';
 
-			return value
-				.toString()
-				.replace('.', decimalOutput);
+			return stringValue
+			.replace('.', decimalOutput)
+			.replace(/(\d)(?=(\d{3})+(?!\d))/g, separator);
 		}
 		formatNumber(num: number, decimal: TDecimalSeparators = '.'): string {
 				const separator = decimal === '.' ? '$1.' : '$1,';

@@ -14,7 +14,7 @@ declare class Converter {
     currencyToNumber(num: number, decimal?: TDecimalSeparators, currency?: TCurrencySymbolTypes): number;
     stringCurrencyToNumber(num: string, decimal: "." | "," | undefined, currency: TCurrencySymbolTypes): number;
     currencyNameToSymbol(currency: TCurrencyNames): string;
-    decimalNumberToString(num: number, decimalOutput?: TDecimalSeparators): string;
+    decimalNumberToString(num: number, decimalOutput?: TDecimalSeparators, places?: number): string;
     formatNumber(num: number, decimal?: TDecimalSeparators): string;
     numberToString(number: number): string;
     stringToBoolean(value: string): boolean;
