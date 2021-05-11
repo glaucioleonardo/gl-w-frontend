@@ -100,6 +100,20 @@ class Sort {
             resolve(sorted);
         });
     }
+
+    async moveArray(array: any[], from: number, to: number): Promise<any[]> {
+        const item = array[from];
+        const newArray = [...array];
+
+        newArray[from] = array[to];
+        newArray[to] = item;
+
+        for (const [i, arrayItem] of newArray.entries()) {
+            arrayItem.id = i;
+        }
+
+        return newArray;
+    }
 }
 // tslint:disable-next-line:variable-name
 export const ArraySort = new Sort();

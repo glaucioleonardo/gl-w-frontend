@@ -9,6 +9,7 @@ export declare const ArrayRemove: Remove;
 declare class Sort {
     get(array: object[], asc: boolean): Promise<any[]>;
     byKey(array: any[], key: string, asc: boolean): Promise<any[]>;
+    moveArray(array: any[], from: number, to: number): Promise<any[]>;
 }
 export declare const ArraySort: Sort;
 export {};
