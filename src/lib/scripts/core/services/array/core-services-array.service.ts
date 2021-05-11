@@ -7,19 +7,34 @@ class Remove {
         return unique.sort();
     }
 
-    async duplicate(array: any[], identification: any, sortIdentification?: string, asc: boolean = true): Promise<any[]> {
-        let uniqueArray = array.filter((identification, index) => {
-            const _thing = JSON.stringify(identification);
-            return index === array.findIndex(obj => {
-                    return JSON.stringify(obj) === _thing;
-            });
-        });
+    async duplicate(array: any[], sort: boolean = false, asc: boolean = true): Promise<any[]> {
+        const arrayWithoutDuplicates = [...new Set(array)];
 
-        if (sortIdentification != null && sortIdentification.length > 0) {
-            uniqueArray = await ArraySort.byKey(uniqueArray, sortIdentification, asc)
+        if (sort) {
+            return await ArraySort.get(arrayWithoutDuplicates, asc);
+        } else {
+            return arrayWithoutDuplicates;
+        }
+    }
+    async duplicatedByKey(data: any[], identification: any, sortIdentification?: string, asc: boolean = true): Promise<any[]> {
+        const array: any[] = [];
+        for (const item of data) {
+            array.push(item[identification]);
         }
 
-        return uniqueArray;
+        const singleArrayWithoutDuplicates: any[] = [...new Set(array)];
+
+        const arrayWithoutDuplicates: any[] = [];
+        singleArrayWithoutDuplicates.forEach((item) => {
+            const i = data.filter(x => x[identification] === item)[0];
+            arrayWithoutDuplicates.push(i);
+        });
+
+        if (sortIdentification != null) {
+            return await ArraySort.byKey(arrayWithoutDuplicates, sortIdentification, asc);
+        } else {
+            return arrayWithoutDuplicates;
+        }
     }
 
     async notDuplicated(array: any[], asc: boolean = true): Promise<any[]> {
