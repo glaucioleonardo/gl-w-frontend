@@ -53,6 +53,10 @@ class Get {
     currentDateNoUTCString(outputFormat: string = 'DD/MM/YYYY'): string {
         return this.customDateNoUTCString(new Date(), outputFormat);
     }
+    customDateExcelNoUTC(date: IDate, format: string = 'DD/MM/YYYY'): Date {
+        const finalDate = this.customDate(date, format);
+        return moment.utc(finalDate, format).add(0.5, 'minute').add(-2, 'seconds').toDate();
+    }
     dayMonthYear(date: IDate, format: string = 'DD/MM/YYYY', separator: string = '/'): IDayMonthYear {
         const x = moment(date, format, true).format(format);
 

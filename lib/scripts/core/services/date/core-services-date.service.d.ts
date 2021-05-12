@@ -13,6 +13,7 @@ declare class Get {
     currentDate(outputFormat?: string): Date;
     currentDateNoUTC(): Date;
     currentDateNoUTCString(outputFormat?: string): string;
+    customDateExcelNoUTC(date: IDate, format?: string): Date;
     dayMonthYear(date: IDate, format?: string, separator?: string): IDayMonthYear;
     dayMonthYearNoUCT(date: IDate, format?: string, separator?: string): IDayMonthYear;
     localDate(year: number, month: number, day: number, local?: IDateLocal): string;
