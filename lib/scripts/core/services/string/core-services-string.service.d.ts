@@ -12,7 +12,7 @@ declare class Converter {
     percentageToNumber(num: string, decimal?: TDecimalSeparators): number;
     numberToPercentage(num: number, includeSymbol?: boolean, separator?: TDecimalSeparators): string;
     currencyToNumber(num: number, decimal?: TDecimalSeparators, currency?: TCurrencySymbolTypes): number;
-    stringCurrencyToNumber(num: string, decimal: "." | "," | undefined, currency: TCurrencySymbolTypes): number;
+    stringCurrencyToNumber(num: string, decimal: TDecimalSeparators | undefined, currency: TCurrencySymbolTypes): number;
     currencyNameToSymbol(currency: TCurrencyNames): string;
     decimalNumberToString(num: number, decimalOutput?: TDecimalSeparators, places?: number): string;
     formatNumber(num: number, decimal?: TDecimalSeparators): string;

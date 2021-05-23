@@ -15,4 +15,8 @@ declare class Highlight {
     setError(field: TFields): void;
 }
 export declare const ElementHighlight: Highlight;
+declare class Dragging {
+    horizontal(slider: HTMLElement): void;
+}
+export declare const ElementDragging: Dragging;
 export {};
