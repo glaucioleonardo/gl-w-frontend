@@ -1435,15 +1435,5 @@ class Core {
     return list;
   }
 }
+// tslint:disable-next-line:variable-name
 export const InternationalCore = new Core();
-
-class Conversion {
-  numberToCurrency(currencyCode: TCurrencyCode, value: number): string {
-    const list = InternationalCore.retrieveList(undefined, undefined, undefined, currencyCode)[0];
-    return new Intl.NumberFormat(list.countryLanguage, {
-      style: 'currency',
-      currency: list.currencyCode
-    }).format(value);
-  }
-}
-export const InternationalConversion = new Conversion();

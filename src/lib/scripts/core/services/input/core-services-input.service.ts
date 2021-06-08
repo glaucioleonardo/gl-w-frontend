@@ -1,6 +1,6 @@
 import Inputmask from 'inputmask';
+import { TDecimalSeparators } from '../number/core-services-number-interface';
 import { TCurrencyTypes, IInputMaskOptions } from './core-services-input.interface';
-import { TDecimalSeparators } from '../string/core-services-string-interface';
 
 class Mask {
   currency(field: HTMLInputElement, type: TCurrencyTypes = 'currency', currencySymbol: string = 'R$') {

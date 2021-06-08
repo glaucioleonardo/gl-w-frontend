@@ -22,6 +22,7 @@ export * from './scripts/core/services/elements/core-services-elements.interface
 export * from './scripts/core/services/input/core-services-input.interface';
 export * from './scripts/core/services/internationalization/core-services-internationalization.interface';
 export * from './scripts/core/services/menu/core-services-menu.interfaces';
+export * from './scripts/core/services/number/core-services-number-interface';
 export * from './scripts/core/services/string/core-services-string-interface';
 export * from './scripts/services/export/excel/services-export-excel.interface';
 export * from './scripts/statics/alignment/statics.alignment.interface';

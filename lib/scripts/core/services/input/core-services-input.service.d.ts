@@ -1,5 +1,5 @@
+import { TDecimalSeparators } from '../number/core-services-number-interface';
 import { TCurrencyTypes } from './core-services-input.interface';
-import { TDecimalSeparators } from '../string/core-services-string-interface';
 declare class Mask {
     currency(field: HTMLInputElement, type?: TCurrencyTypes, currencySymbol?: string): string;
     percentage(field: HTMLInputElement, allowMinus?: boolean, decimalSeparator?: TDecimalSeparators, rightAlign?: boolean, step?: number): string;

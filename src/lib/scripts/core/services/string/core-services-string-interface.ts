@@ -9,11 +9,3 @@ export type TCurrencyNames =
   'yuan' |
   'rupee' |
   'yen';
-
-export type TCurrencySymbolTypes =
-  'Ar$' |
-  'R$' |
-  '€' |
-  'US$';
-
-export type TDecimalSeparators = '.' | ',';

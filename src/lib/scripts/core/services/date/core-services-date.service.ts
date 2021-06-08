@@ -1,5 +1,6 @@
 import * as moment from 'moment';
 import {DateRange, extendMoment} from 'moment-range';
+import { NumberParse } from '../number/core-services-number.service';
 import { StringConverter } from '../string/core-services-string.service';
 import { IDate, IDateLocal, IDayMonthYear, IDaysOfMonth, IWeeksOfMonth } from './core-services-date.interface';
 import { unitOfTime } from 'moment';
@@ -246,7 +247,7 @@ class Get {
 
       const weekDays: IDaysOfMonth[] = [];
       for (let j = start; j <= end; j++) {
-        const day: string = StringConverter.numberToString(j);
+        const day: string = NumberParse.toString(j);
 
         weekDays.push({
           week: week.week,

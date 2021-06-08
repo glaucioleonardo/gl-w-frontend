@@ -20,10 +20,10 @@ class Resize {
     // endregion
 
     // region Create and initialize two canvas
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-    const canvasCopy = document.createElement("canvas");
-    const copyContext = canvasCopy.getContext("2d");
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const canvasCopy = document.createElement('canvas');
+    const copyContext = canvasCopy.getContext('2d');
     // endregion
 
     // // region Set context background
