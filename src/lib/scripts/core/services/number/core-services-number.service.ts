@@ -108,7 +108,9 @@ class Core {
       .replace(/\./g, '')
       .replace(',', '.')
       .replace(decimal, '.')
-      .replace('% ', '');
+      .replace('% ', '')
+      .replace('%', '')
+      ?.trim();
 
     return new Decimal(parsedNumber)
       .dividedBy(100)
