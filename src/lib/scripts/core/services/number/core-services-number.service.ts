@@ -16,14 +16,13 @@ class Core {
     const invalid = value == null || Number.isNaN(value) || new Decimal(value).isNaN();
 
     if (!invalid) {
-      const epsilon = new Decimal(Number.EPSILON);
-      return new Decimal(value).plus(epsilon);
+      return new Decimal(value);
     } else {
       return errorValue;
     }
   }
   toPercentage(num: number, includeSymbol: boolean = true, decimalSeparator: TDecimalSeparators = ',', decimalPlaces: number = 2): string {
-    const parsedNumber: Decimal = new Decimal(num).plus(100);
+    const parsedNumber: Decimal = new Decimal(num).times(100);
     const parsedString: string = parsedNumber.toDecimalPlaces(decimalPlaces).toString().replace('.', decimalSeparator);
     const symbol: string = includeSymbol ? '%' : '';
 
