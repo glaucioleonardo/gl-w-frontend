@@ -1,6 +1,7 @@
 import { IAttachmentData, IAttachmentFileInfo } from './core-services-attachment.interface';
 declare class Convert {
-    textFileToUrlImage(file: File): PromiseLike<string>;
+    textFileToUrlImage(file: File): Promise<string>;
+    fileToBase64Image(file: File): Promise<string>;
 }
 export declare const AttachmentConvert: Convert;
 declare class Clean {

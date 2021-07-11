@@ -1,7 +1,7 @@
 import { IAttachmentData, IAttachmentFileInfo } from './core-services-attachment.interface';
 
 class Convert {
-  textFileToUrlImage(file: File): PromiseLike<string> {
+  textFileToUrlImage(file: File): Promise<string> {
     return new Promise(resolve => {
       const fileReader = new FileReader();
       fileReader.addEventListener('load', (e: any) => {
@@ -9,6 +9,14 @@ class Convert {
       });
 
       fileReader.readAsDataURL(file);
+    });
+  }
+  fileToBase64Image(file: File): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = error => reject(error);
     });
   }
 }
