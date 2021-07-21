@@ -97,10 +97,14 @@ class ViewPort {
     window.addEventListener('resize', () => {
       this.setFullHeight();
     });
+
+    window.addEventListener('orientationchange', () => {
+      this.setFullHeight();
+    });
   }
 
   setFullWidth(): void {
-    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    // First we get the viewport width and we multiple it by 1% to get a value for a vw unit
     const vw = window.innerWidth * 0.01;
     // Then we set the value in the --vh custom property to the root of the document
     document.documentElement.style.setProperty('--vw', `${vw}px`);
@@ -108,6 +112,10 @@ class ViewPort {
   setFullWidthListener(): void {
     this.setFullWidth();
     window.addEventListener('resize', () => {
+      this.setFullWidth();
+    });
+
+    window.addEventListener('orientationchange', () => {
       this.setFullWidth();
     });
   }
