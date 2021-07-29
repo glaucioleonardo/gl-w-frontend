@@ -6,6 +6,7 @@ export interface IAttachmentData {
   file?: File;
   url?: string;
   icon?: string;
+  type?: string | 'image' | 'video';
 }
 
 export interface IAttachmentFileInfo {
