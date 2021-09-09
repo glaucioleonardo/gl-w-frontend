@@ -1,6 +1,8 @@
-import Inputmask from 'inputmask';
 import { TDecimalSeparators } from '../number/core-services-number-interface';
 import { TCurrencyTypes, IInputMaskOptions } from './core-services-input.interface';
+
+// tslint:disable-next-line:variable-name
+const Inputmask = require('inputmask/dist/inputmask.min');
 
 class Mask {
   currency(field: HTMLInputElement, type: TCurrencyTypes = 'currency', currencySymbol: string = 'R$') {
