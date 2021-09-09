@@ -1,10 +1,11 @@
 import { Subject } from 'rxjs';
-import * as Excel from 'xlsx';
 import { DateGet } from '../../../core/services/date/core-services-date.service';
 
 import { IArrayMatrixToExcel, TExcelFileName, IExcelResult, TExcelExport, IExcelExportSingleArray, IExcelExportMultipleArray, IExcelJsonToFileProps } from './services-export-excel.interface';
-import { WorkBook } from 'xlsx';
 import { DataConversor } from '../../../core/services/data/core-services-data.service';
+
+// tslint:disable-next-line:variable-name
+const Excel = require('xlsx/dist/xlsx.mini.min');
 
 class Core {
   /**
@@ -69,10 +70,45 @@ class Core {
     })
   }
 }
+// tslint:disable-next-line:variable-name
 export const ExcelConversor = new Core();
 
 class Export {
   status$: Subject<string> = new Subject();
+
+  private static async saveFile(content: any[], sheetName: string, _fileName: TExcelFileName = null): Promise<IExcelResult> {
+    const currentDate = DateGet.currentDateString('YYYYMMDD_HHmmss');
+    const fileName = _fileName == null ? `Export ${currentDate}` : `${_fileName}`;
+    const fileNameWidthDate = `${fileName} ${currentDate}.xlsx`;
+
+    const ws = Excel.utils.json_to_sheet(content);
+
+    // Add to workbook
+    const wb = Excel.utils.book_new();
+    Excel.utils.book_append_sheet(wb, ws, sheetName);
+
+    // Generate a XLSX file
+    await Excel.writeFile(wb, fileNameWidthDate, { cellStyles: true });
+    ExportExcel.clearSubject()
+    return { code: 200, message: 'File saved successfully' };
+  }
+  private static async saveFileFromMultiple(data: IArrayMatrixToExcel[], fileName: TExcelFileName = null): Promise<IExcelResult> {
+    const currentDate = DateGet.currentDateString('YYYYMMDD_HHmmss');
+    const currentFileName = fileName == null ? `Export ${currentDate}` : `${fileName}`;
+    const fileNameWidthDate = `${currentFileName} ${currentDate}.xlsx`;
+
+    const wb: any = Excel.utils.book_new();
+
+    for (const sheet of data) {
+      const ws = Excel.utils.json_to_sheet(sheet.content);
+      Excel.utils.book_append_sheet(wb, ws, sheet.sheetName);
+    }
+
+    await Excel.writeFile(wb, fileNameWidthDate, { cellStyles: true });
+    ExportExcel.clearSubject()
+
+    return { code: 200, message: 'File saved successfully' };
+  }
 
   /**
    * Export simple array data to excel
@@ -104,39 +140,6 @@ class Export {
     return this.exportExcel('Multiple', single, multiple);
   }
 
-  private static async saveFile(content: any[], sheetName: string, _fileName: TExcelFileName = null): Promise<IExcelResult> {
-    const currentDate = DateGet.currentDateString('YYYYMMDD_HHmmss');
-    const fileName = _fileName == null ? `Export ${currentDate}` : `${_fileName}`;
-    const fileNameWidthDate = `${fileName} ${currentDate}.xlsx`;
-
-    const ws = Excel.utils.json_to_sheet(content);
-
-    // Add to workbook
-    const wb = Excel.utils.book_new();
-    Excel.utils.book_append_sheet(wb, ws, sheetName);
-
-    // Generate a XLSX file
-    await Excel.writeFile(wb, fileNameWidthDate, { cellStyles: true });
-    ExportExcel.clearSubject()
-    return { code: 200, message: 'File saved successfully' };
-  }
-  private static async saveFileFromMultiple(data: IArrayMatrixToExcel[], fileName: TExcelFileName = null): Promise<IExcelResult> {
-    const currentDate = DateGet.currentDateString('YYYYMMDD_HHmmss');
-    const currentFileName = fileName == null ? `Export ${currentDate}` : `${fileName}`;
-    const fileNameWidthDate = `${currentFileName} ${currentDate}.xlsx`;
-
-    const wb: WorkBook = Excel.utils.book_new();
-
-    for (const sheet of data) {
-      const ws = Excel.utils.json_to_sheet(sheet.content);
-      Excel.utils.book_append_sheet(wb, ws, sheet.sheetName);
-    }
-
-    await Excel.writeFile(wb, fileNameWidthDate, { cellStyles: true });
-    ExportExcel.clearSubject()
-
-    return { code: 200, message: 'File saved successfully' };
-  }
   private async exportExcel(type: TExcelExport, singleData: IExcelExportSingleArray, multipleData: IExcelExportMultipleArray): Promise<string> {
     this.status$.next('Creating Excel workbook...');
 
