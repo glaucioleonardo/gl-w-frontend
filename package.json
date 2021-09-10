@@ -1,6 +1,6 @@
 {
   "name": "gl-w-frontend",
-  "version": "4.1.7",
+  "version": "4.1.8",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/bundle.js",
   "types": "lib/index.d.ts",
@@ -51,6 +51,7 @@
   "license": "ISC",
   "homepage": "https://www.glauciosantana.com",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "decimal.js": "^10.3.1",
     "inputmask": "^5.0.6",
     "moment": "^2.29.1",
@@ -60,6 +61,9 @@
     "xlsx": "^0.17.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
     "@types/inputmask": "^5.0.1",
     "@types/node": "^16.4.11",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
