@@ -1,9 +1,8 @@
-import * as moment from 'moment';
 import {DateRange, extendMoment} from 'moment-range';
 import { NumberParse } from '../number/core-services-number.service';
-import { StringConverter } from '../string/core-services-string.service';
 import { IDate, IDateLocal, IDayMonthYear, IDaysOfMonth, IWeeksOfMonth } from './core-services-date.interface';
-import { unitOfTime } from 'moment';
+
+const moment = require('moment/min/moment.min.js');
 
 class Get {
   excelToDate(serialDate: number): Date {
@@ -273,10 +272,10 @@ class Get {
 export const DateGet = new Get();
 
 class Comparable {
-  isDateBefore(startDate: Date, endDate: Date, type: unitOfTime.StartOf = 'day') {
+  isDateBefore(startDate: Date, endDate: Date, type = 'day') {
     return moment(endDate).isBefore(startDate, type);
   }
-  isDateBeforeString(startDate: string, endDate: string, type: unitOfTime.StartOf = 'day'): boolean {
+  isDateBeforeString(startDate: string, endDate: string, type = 'day'): boolean {
     return moment(endDate).isBefore(startDate, type);
   }
 }

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "moduleResolution": "node",
     "declaration": true,
     "sourceMap": true,
@@ -10,7 +11,12 @@
     "typeRoots": [
       "./node_modules/@types",
       "./@types"
-    ]
+    ],
+    "paths": {
+      "inputmask": [
+        "node_modules/inputmask/dist/inputmask.min.js"
+      ]
+    }
   },
   "exclude": [
     "node_modules", "**/__tests__/*"

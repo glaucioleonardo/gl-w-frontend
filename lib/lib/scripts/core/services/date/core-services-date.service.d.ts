@@ -1,5 +1,4 @@
 import { IDate, IDateLocal, IDayMonthYear, IDaysOfMonth, IWeeksOfMonth } from './core-services-date.interface';
-import { unitOfTime } from 'moment';
 declare class Get {
     excelToDate(serialDate: number): Date;
     excelToDateNoUTC(serialDate: number): Date;
@@ -36,8 +35,8 @@ declare class Get {
 }
 export declare const DateGet: Get;
 declare class Comparable {
-    isDateBefore(startDate: Date, endDate: Date, type?: unitOfTime.StartOf): boolean;
-    isDateBeforeString(startDate: string, endDate: string, type?: unitOfTime.StartOf): boolean;
+    isDateBefore(startDate: Date, endDate: Date, type?: string): any;
+    isDateBeforeString(startDate: string, endDate: string, type?: string): boolean;
 }
 export declare const DateComparable: Comparable;
 declare class Validation {
@@ -46,8 +45,8 @@ declare class Validation {
 export declare const DateValidation: Validation;
 declare class Picker {
     dateFromDatePicker(date: IDate, format?: string, outputFormat?: string): string;
-    localDateForDatePicker(date: IDate, outputFormat?: string): string;
-    currentDateForDatePicker(dateFormat?: string, outputFormat?: string): string;
+    localDateForDatePicker(date: IDate, outputFormat?: string): any;
+    currentDateForDatePicker(dateFormat?: string, outputFormat?: string): any;
     dateForDatePicker(month: number, day: number, year: number): string;
 }
 export declare const DatePicker: Picker;
