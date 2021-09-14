@@ -57,3 +57,4 @@ Thumbs.db
 /.idea/workspace.xml
 /src/lib/scripts/core/services/input/lib/
 /src/lib/scripts/core/services/array/lib/
+/src/lib/scripts/core/services/attachment/lib/

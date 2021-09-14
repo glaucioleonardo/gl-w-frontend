@@ -1,6 +1,6 @@
 // Modules
 export * from './scripts/core/services/array/src/core-services-array.service';
-export * from './scripts/core/services/attachment/core-services-attachment.service';
+export * from './scripts/core/services/attachment/src/core-services-attachment.service';
 export * from './scripts/core/services/browser/core-services-browser.service';
 export * from './scripts/core/services/combobox/core-services-combobox.service';
 export * from './scripts/core/services/date/core-services-date.service';

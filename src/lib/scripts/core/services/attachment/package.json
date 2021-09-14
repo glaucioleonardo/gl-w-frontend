@@ -1,6 +1,6 @@
 {
-  "name": "gl-w-array-frontend",
-  "version": "1.0.1",
+  "name": "gl-w-attachment-frontend",
+  "version": "1.0.0",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -25,8 +25,8 @@
     "typescript tool",
     "front-end",
     "pure javascript",
-    "array tool",
-    "arrays"
+    "attachment tool",
+    "attachments"
   ],
   "bugs": "https://github.com/glaucioleonardo/gl-w-frontend/issues",
   "author": "Gláucio Leonardo Sant'ana",

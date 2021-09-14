@@ -31,7 +31,6 @@
     "node_modules", "**/__tests__/*"
   ],
   "include": [
-    "./src/*.ts",
-    "index.ts"
+    "./src/*.ts"
   ]
 }
