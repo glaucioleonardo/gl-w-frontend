@@ -10,7 +10,7 @@ export * from './lib/scripts/core/services/date/core-services-date.service';
 export * from './lib/scripts/core/services/data/core-services-data.service';
 export * from './lib/scripts/core/services/elements/core-services-elements.service';
 export * from './lib/scripts/core/services/image/core-services-image.service';
-export * from './lib/scripts/core/services/input/core-services-input.service';
+export * from './lib/scripts/core/services/input/src/core-services-input.service';
 export * from './lib/scripts/core/services/internationalization/core-services-internationalization.service';
 export * from './lib/scripts/core/services/number/core-services-number.service';
 export * from './lib/scripts/core/services/string/core-services-string.service';
@@ -30,7 +30,7 @@ export * from './lib/scripts/core/services/combobox/core-services-combobox.inter
 export * from './lib/scripts/core/services/date/core-services-date.interface';
 // export * from './lib/scripts/core/services/data/core-services-data.interface';
 export * from './lib/scripts/core/services/elements/core-services-elements.interface';
-export * from './lib/scripts/core/services/input/core-services-input.interface';
+export * from './lib/scripts/core/services/input/src/core-services-input.interface';
 export * from './lib/scripts/core/services/internationalization/core-services-internationalization.interface';
 export * from './lib/scripts/core/services/menu/core-services-menu.interfaces';
 export * from './lib/scripts/core/services/number/core-services-number-interface';

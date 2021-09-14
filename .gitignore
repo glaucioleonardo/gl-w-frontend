@@ -55,3 +55,4 @@ Thumbs.db
 /.idea/vcs.xml
 /.idea/watcherTasks.xml
 /.idea/workspace.xml
+/src/lib/scripts/core/services/input/lib/
