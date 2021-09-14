@@ -1,6 +1,6 @@
 {
   "name": "gl-w-browser-frontend",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/browser/src/index.js",
   "types": "lib/browser/src/index.d.ts",
@@ -32,7 +32,9 @@
   "author": "Gláucio Leonardo Sant'ana",
   "license": "ISC",
   "homepage": "https://www.glauciosantana.com",
-  "dependencies": {},
+  "dependencies": {
+    "screenfull": "^5.1.0"
+  },
   "devDependencies": {
     "@types/node": "^14.14.31",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
