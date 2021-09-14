@@ -4,7 +4,7 @@
 // Modules
 export * from './lib/scripts/core/services/array/src/core-services-array.service';
 export * from './lib/scripts/core/services/attachment/src/core-services-attachment.service';
-export * from './lib/scripts/core/services/browser/core-services-browser.service';
+export * from './lib/scripts/core/services/browser/src/core-services-browser.service';
 export * from './lib/scripts/core/services/combobox/core-services-combobox.service';
 export * from './lib/scripts/core/services/date/core-services-date.service';
 export * from './lib/scripts/core/services/data/core-services-data.service';
@@ -25,7 +25,7 @@ export * from './lib/scripts/statics/fonts/statics.font.static';
 // Interfaces
 // export * from './lib/scripts/core/services/array/core-services-array.interface';
 // export * from './lib/scripts/core/services/attachment/core-services-attachment.interface';
-export * from './lib/scripts/core/services/browser/core-services-browser.interface';
+export * from './lib/scripts/core/services/browser/src/core-services-browser.interface';
 export * from './lib/scripts/core/services/combobox/core-services-combobox.interface';
 export * from './lib/scripts/core/services/date/core-services-date.interface';
 // export * from './lib/scripts/core/services/data/core-services-data.interface';
