@@ -2,7 +2,7 @@
 // export * from './bundle';
 
 // Modules
-export * from './lib/scripts/core/services/array/core-services-array.service';
+export * from './lib/scripts/core/services/array/src/core-services-array.service';
 export * from './lib/scripts/core/services/attachment/core-services-attachment.service';
 export * from './lib/scripts/core/services/browser/core-services-browser.service';
 export * from './lib/scripts/core/services/combobox/core-services-combobox.service';
