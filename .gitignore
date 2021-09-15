@@ -69,3 +69,5 @@ Thumbs.db
 /src/lib/scripts/core/services/menu/lib/
 /src/lib/scripts/core/services/number/lib/
 /src/lib/scripts/core/services/string/lib/
+/src/lib/scripts/core/services/date/node_modules/
+/src/lib/scripts/services/export/excel/lib/

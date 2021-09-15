@@ -291,6 +291,15 @@ class Parser {
 export const AttachmentParser = new Parser();
 
 class Validate {
+  /** The user must include the attribute 'data-maxsize' in mb(megabyte); */
+  maxSize = (input: HTMLInputElement): number => {
+    const fileName = (input.attributes as any)['data-maxsize'].nodeValue;
+    if (fileName) {
+      return parseInt(fileName, 10);
+    } else {
+      return 1024 * 45;
+    }
+  }
   file(input: HTMLInputElement, accepts: string[]): boolean {
     return this.fileArray(input.value, accepts);
   }
@@ -332,16 +341,6 @@ class Validate {
     } else {
       console.error('Input is null.');
       return false;
-    }
-  }
-
-  /** The user must include the attribute 'data-maxsize' in mb(megabyte); */
-  maxSize = (input: HTMLInputElement): number => {
-    const fileName = (input.attributes as any)['data-maxsize'].nodeValue;
-    if (fileName) {
-      return parseInt(fileName, 10);
-    } else {
-      return 1024 * 45;
     }
   }
 
