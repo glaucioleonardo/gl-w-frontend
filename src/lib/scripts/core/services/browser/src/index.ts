@@ -12,4 +12,4 @@ export {
     IFullScreenSrc,
     IMenuButton,
     IFullScreenAlt
-} from '../../menu/core-services-menu.interfaces';
+} from '../../menu/src/core-services-menu.interfaces';

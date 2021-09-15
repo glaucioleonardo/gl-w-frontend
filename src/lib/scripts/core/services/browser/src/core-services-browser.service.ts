@@ -1,6 +1,6 @@
 import * as screenfull from 'screenfull';
 
-import { IFullScreenAlt, IFullScreenSrc, IMenuButton } from '../../menu/core-services-menu.interfaces';
+import { IFullScreenAlt, IFullScreenSrc, IMenuButton } from '../../menu/src/core-services-menu.interfaces';
 import { IFullscreenResult } from './core-services-browser.interface';
 
 class FullScreen {

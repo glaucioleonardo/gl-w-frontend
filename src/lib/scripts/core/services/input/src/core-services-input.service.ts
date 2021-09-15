@@ -1,4 +1,4 @@
-import { TDecimalSeparators } from '../../number/core-services-number-interface';
+import { TDecimalSeparators } from '../../number/src';
 import { TCurrencyTypes, IInputMaskOptions } from './core-services-input.interface';
 
 // tslint:disable-next-line:variable-name

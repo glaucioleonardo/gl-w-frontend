@@ -1,4 +1,4 @@
-# gl-w-frontend #
+# gl-w-input-frontend #
 [![version](https://img.shields.io/npm/v/gl-w-input-frontend)](https://www.npmjs.com/package/gl-w-input-frontend) 
 [![downloads](https://img.shields.io/npm/types/gl-w-input-frontend)](https://www.npmjs.com/package/gl-w-input-frontend) 
 [![downloads](https://img.shields.io/npm/dw/gl-w-input-frontend)](https://www.npmjs.com/package/gl-w-input-frontend) 
@@ -12,7 +12,7 @@ This package contains the types for using with Typescript.
 ### How do I get set up? ###
  The easiest way to install this library is via npm using the following commands:
 * Latest version `npm install gl-w-frontend --save`;
-* [Available versions](https://www.npmjs.com/package/gl-w-frontend?activeTab=versions) `npm install gl-w-frontend@version --save`;
+* [Available versions](https://www.npmjs.com/package/gl-w-input-frontend?activeTab=versions) `npm install gl-w-input-frontend@version --save`;
 
 
 If you are using only browser version:

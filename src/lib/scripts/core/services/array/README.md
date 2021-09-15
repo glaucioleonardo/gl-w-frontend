@@ -1,10 +1,10 @@
-# gl-w-frontend #
-[![version](https://img.shields.io/npm/v/gl-w-input-frontend)](https://www.npmjs.com/package/gl-w-input-frontend) 
-[![downloads](https://img.shields.io/npm/types/gl-w-input-frontend)](https://www.npmjs.com/package/gl-w-input-frontend) 
-[![downloads](https://img.shields.io/npm/dw/gl-w-input-frontend)](https://www.npmjs.com/package/gl-w-input-frontend) 
+# gl-w-array-frontend #
+[![version](https://img.shields.io/npm/v/gl-w-array-frontend)](https://www.npmjs.com/package/gl-w-array-frontend) 
+[![downloads](https://img.shields.io/npm/types/gl-w-array-frontend)](https://www.npmjs.com/package/gl-w-array-frontend) 
+[![downloads](https://img.shields.io/npm/dw/gl-w-array-frontend)](https://www.npmjs.com/package/gl-w-array-frontend) 
 
 ### What is this repository for? ###
-This package (**g**laucio**l**eonardo-**w**eb-input-**frontend**) is a common code for using among web front-end development 
+This package (**g**laucio**l**eonardo-**w**eb-array-**frontend**) is a common code for using among web front-end development 
 such as ES6+ and TypeScript.<br>
 
 This package contains the types for using with Typescript.
@@ -12,7 +12,7 @@ This package contains the types for using with Typescript.
 ### How do I get set up? ###
  The easiest way to install this library is via npm using the following commands:
 * Latest version `npm install gl-w-frontend --save`;
-* [Available versions](https://www.npmjs.com/package/gl-w-frontend?activeTab=versions) `npm install gl-w-frontend@version --save`;
+* [Available versions](https://www.npmjs.com/package/gl-w-array-frontend?activeTab=versions) `npm install gl-w-array-frontend@version --save`;
 
 
 If you are using only browser version:

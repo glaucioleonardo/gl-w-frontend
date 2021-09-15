@@ -59,3 +59,13 @@ Thumbs.db
 /src/lib/scripts/core/services/array/lib/
 /src/lib/scripts/core/services/attachment/lib/
 /src/lib/scripts/core/services/browser/lib/
+/src/lib/scripts/core/services/combobox/lib/
+/src/lib/scripts/core/services/url/lib/
+/src/lib/scripts/core/services/data/lib/
+/src/lib/scripts/core/services/date/lib/
+/src/lib/scripts/core/services/elements/lib/
+/src/lib/scripts/core/services/image/lib/
+/src/lib/scripts/core/services/internationalization/lib/
+/src/lib/scripts/core/services/menu/lib/
+/src/lib/scripts/core/services/number/lib/
+/src/lib/scripts/core/services/string/lib/

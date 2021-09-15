@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "declaration": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true,
+    "diagnostics": true,
+
+    "target": "ES2015",
+    "module": "ESNext",
+    "outDir": "lib",
+    "strict": false,
+
+    "lib": [
+      "dom",
+      "ES2015.Symbol",
+      "ES2015.Symbol.WellKnown",
+      "ES2015.Iterable",
+      "ES2015.Promise",
+      "ES2015.Core",
+      "ES2016"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./@types"
+    ]
+  },
+  "exclude": [
+    "node_modules", "**/__tests__/*"
+  ],
+  "include": [
+    "./src/*.ts"
+  ]
+}
