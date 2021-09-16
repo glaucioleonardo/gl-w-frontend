@@ -1,8 +1,6 @@
 import { TDecimalSeparators } from '../../number/src';
 import { TCurrencyTypes, IInputMaskOptions } from './core-services-input.interface';
-
-// tslint:disable-next-line:variable-name
-const inputMask = require('inputmask/dist/inputmask.min');
+import Inputmask from 'inputmask';
 
 class Mask {
   currency(field: HTMLInputElement, type: TCurrencyTypes = 'currency', currencySymbol: string = 'R$') {
@@ -17,7 +15,7 @@ class Mask {
       options = {prefix: `${currencySymbol} `, numericInput: true, allowMinus : true, rightAlign: false, radixPoint: ',', groupSeparator : '.'};
     }
 
-    const im = new inputMask('currency', options);
+    const im = new Inputmask('currency', options);
     im.mask(field);
     return mask;
   }
@@ -27,7 +25,7 @@ class Mask {
     const mask = `0,00${symbol}`;
     const groupSeparator: TDecimalSeparators = decimalSeparator === ',' ? '.' : ',';
 
-    inputMask({
+    Inputmask({
       alias: 'numeric',
       suffix: `${symbol} `,
       numericInput: true,
@@ -46,7 +44,7 @@ class Mask {
     const mask = `0,00`;
     const groupSeparator: TDecimalSeparators = decimalSeparator === ',' ? '.' : ',';
 
-    inputMask({
+    Inputmask({
       alias: 'numeric',
       numericInput: true,
       allowMinus,
@@ -63,7 +61,7 @@ class Mask {
   integer(field: HTMLInputElement, allowMinus: boolean = true, rightAlign: boolean = false, step: number = 1) {
     const mask = `0`;
 
-    inputMask({
+    Inputmask({
       alias: 'integer',
       numericInput: true,
       inputmode: 'numeric',
@@ -77,7 +75,7 @@ class Mask {
   }
 
   customNumberPhone(mask: string, field: HTMLInputElement, rightAlign: boolean = false) {
-    inputMask({
+    Inputmask({
       mask,
       rightAlign,
       placeholder: mask
@@ -87,7 +85,7 @@ class Mask {
   }
 
   remove(field: HTMLInputElement) {
-    inputMask.remove(field);
+    Inputmask.remove(field);
   }
 }
 // tslint:disable-next-line:variable-name

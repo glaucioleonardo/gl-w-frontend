@@ -1,6 +1,6 @@
 {
   "name": "gl-w-input-frontend",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/input/src/index.js",
   "types": "lib/input/src/index.d.ts",
