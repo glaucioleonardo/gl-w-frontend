@@ -4,6 +4,10 @@ import Inputmask from 'inputmask';
 
 class Mask {
   currency(field: HTMLInputElement, type: TCurrencyTypes = 'currency', currencySymbol: string = 'R$') {
+    if (this.isValid(field)) {
+      return 'Unable to add mask to null field!'
+    }
+
     let options: IInputMaskOptions;
     let mask: string;
 
@@ -21,6 +25,10 @@ class Mask {
   }
 
   percentage(field: HTMLInputElement, allowMinus: boolean = true, decimalSeparator: TDecimalSeparators = ',', rightAlign: boolean = true, step: number = 5) {
+    if (this.isValid(field)) {
+      return 'Unable to add mask to null field!'
+    }
+
     const symbol = '%';
     const mask = `0,00${symbol}`;
     const groupSeparator: TDecimalSeparators = decimalSeparator === ',' ? '.' : ',';
@@ -41,6 +49,10 @@ class Mask {
   }
 
   numeric(field: HTMLInputElement, allowMinus: boolean = true, decimalSeparator: TDecimalSeparators = ',', rightAlign: boolean = true, step: number = 1) {
+    if (this.isValid(field)) {
+      return 'Unable to add mask to null field!'
+    }
+
     const mask = `0,00`;
     const groupSeparator: TDecimalSeparators = decimalSeparator === ',' ? '.' : ',';
 
@@ -59,6 +71,10 @@ class Mask {
   }
 
   integer(field: HTMLInputElement, allowMinus: boolean = true, rightAlign: boolean = false, step: number = 1) {
+    if (this.isValid(field)) {
+      return 'Unable to add mask to null field!'
+    }
+
     const mask = `0`;
 
     Inputmask({
@@ -75,6 +91,10 @@ class Mask {
   }
 
   customNumberPhone(mask: string, field: HTMLInputElement, rightAlign: boolean = false) {
+    if (this.isValid(field)) {
+      return 'Unable to add mask to null field!'
+    }
+
     Inputmask({
       mask,
       rightAlign,
@@ -85,7 +105,15 @@ class Mask {
   }
 
   remove(field: HTMLInputElement) {
+    if (this.isValid(field)) {
+      return 'Unable to remove mask to null field!'
+    }
+
     Inputmask.remove(field);
+  }
+
+  private isValid(field: HTMLInputElement): boolean {
+    return field != null;
   }
 }
 // tslint:disable-next-line:variable-name
