@@ -61,6 +61,7 @@ class Dom {
     const input: HTMLInputElement | null = parent.querySelector('input');
 
     if (input == null) {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       console.error(`Input not found on current combobox group: ${parent}`);
     } else {
       if (disable) {

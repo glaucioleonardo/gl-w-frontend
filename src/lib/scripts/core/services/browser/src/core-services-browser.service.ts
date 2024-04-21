@@ -1,13 +1,12 @@
-import * as screenfull from 'screenfull';
+import screenfull from 'screenfull';
 
 import { IFullScreenAlt, IFullScreenSrc, IMenuButton } from '../../menu/src';
 import { IFullscreenResult } from './core-services-browser.interface';
 
 class FullScreen {
-  listener(menuButton: IMenuButton, alt: IFullScreenAlt, src: IFullScreenSrc, showLog: boolean = false): void {
+  listener(menuButton: IMenuButton, alt: IFullScreenAlt, src: IFullScreenSrc, showLog = false): void {
     if (screenfull.isEnabled) {
       screenfull.on('change', () => {
-        // @ts-ignore
         if (screenfull.isFullscreen) {
           menuButton.src = src.exit;
           menuButton.alt = alt.exit;
@@ -17,7 +16,6 @@ class FullScreen {
         }
 
         if (showLog) {
-          // @ts-ignore
           const label: string = screenfull.isFullscreen ? 'enabled' : 'disabled';
           console.log(`Fullscreen ${label}`);
         }
@@ -27,12 +25,11 @@ class FullScreen {
     }
   }
   disableListener(): void {
-    // @ts-ignore
     screenfull.off('change', () => {
       console.log('Fullscreen listener has been disabled');
     });
   }
-  toggle(menuButton: IMenuButton, alt: IFullScreenAlt, src: IFullScreenSrc, showLog: boolean = false): PromiseLike<IFullscreenResult> {
+  toggle(menuButton: IMenuButton, alt: IFullScreenAlt, src: IFullScreenSrc, showLog = false): PromiseLike<IFullscreenResult> {
     return new Promise((resolve, reject) => {
       if (screenfull.isEnabled) {
         if (screenfull.isFullscreen) {
@@ -76,7 +73,7 @@ class Version {
     const ua = window.navigator.userAgent;
     const msie = ua.indexOf('MSIE ');
 
-    return msie > 0 || !!navigator.userAgent.match(/Trident.*rv:11\./);
+    return msie > 0 || !!(/Trident.*rv:11\./.exec(navigator.userAgent));
   }
   isBeforeIE11(): boolean {
     return navigator.appVersion.indexOf('MSIE 10') !== -1;

@@ -26,7 +26,7 @@ class Mask {
 
   percentage(field: HTMLInputElement, allowMinus: boolean = true, decimalSeparator: TDecimalSeparators = ',', rightAlign: boolean = true, step: number = 5) {
     if (this.isValid(field)) {
-      return 'Unable to add mask to null field!'
+      return 'Unable to add mask to null field!';
     }
 
     const symbol = '%';

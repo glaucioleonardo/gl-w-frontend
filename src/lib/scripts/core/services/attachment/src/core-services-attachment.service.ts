@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/indent */
 import { IAttachmentData, IAttachmentFileInfo } from './core-services-attachment.interface';
 
 class Convert {
@@ -202,7 +203,9 @@ class Icon {
    * @param url Where the images must be found. Default: 'assets/img/icon/attachment-icons/'
    */
   get(fileName: string, url?: string): string {
-    if (url == null) { url = '../assets/img/icon/attachment-icons/' }
+    if (url == null) {
+      url = '../assets/img/icon/attachment-icons/';
+    }
     const extension = this.extension(fileName);
 
     let fileIcon;
@@ -238,7 +241,7 @@ class Icon {
 
       case 'rar': case 'zip': case '7z': case 'arj': case 'bz2': case 'cab': case 'gz':
       case 'lz': case 'lzh': case 'tar': case 'uue': case 'xz': case 'z': case 'zipx': case '001':
-      fileIcon = url + 'zip.svg'; break;
+        fileIcon = url + 'zip.svg'; break;
 
       case 'htm': case 'html': case 'shtml': case 'xht': case 'xhtml': case 'webp': case 'mht':
       case 'mhtml': case 'url': case 'website': fileIcon = url + 'browser.svg'; break;
@@ -254,6 +257,7 @@ class Icon {
       default: fileIcon = url + 'file.svg'; break;
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return fileIcon;
   }
   extension(fileName: string): string {
@@ -293,13 +297,14 @@ export const AttachmentParser = new Parser();
 class Validate {
   /** The user must include the attribute 'data-maxsize' in mb(megabyte); */
   maxSize = (input: HTMLInputElement): number => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const fileName = (input.attributes as any)['data-maxsize'].nodeValue;
     if (fileName) {
       return parseInt(fileName, 10);
     } else {
       return 1024 * 45;
     }
-  }
+  };
   file(input: HTMLInputElement, accepts: string[]): boolean {
     return this.fileArray(input.value, accepts);
   }
