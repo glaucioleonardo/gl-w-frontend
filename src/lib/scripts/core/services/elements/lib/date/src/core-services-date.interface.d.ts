@@ -24,6 +24,6 @@ export interface IDayMonthYear {
     month: number;
     year: number;
 }
-export declare type IDate = MomentInput;
-export declare type IUnityOfTime = unitOfTime.StartOf;
-export declare type IDateLocal = string | string[];
+export type IDate = MomentInput;
+export type IUnityOfTime = unitOfTime.StartOf;
+export type IDateLocal = string | string[];

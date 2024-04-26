@@ -1,1 +1,1 @@
-export declare type TFields = HTMLInputElement | HTMLDivElement | HTMLTextAreaElement | HTMLSpanElement | null;
+export type TFields = HTMLInputElement | HTMLDivElement | HTMLTextAreaElement | HTMLSpanElement | null;

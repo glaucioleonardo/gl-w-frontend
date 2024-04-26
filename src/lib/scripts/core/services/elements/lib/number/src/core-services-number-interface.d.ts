@@ -1,2 +1,2 @@
-export declare type TCurrencySymbolTypes = 'Ar$' | 'R$' | '€' | 'US$';
-export declare type TDecimalSeparators = '.' | ',';
+export type TCurrencySymbolTypes = 'Ar$' | 'R$' | '€' | 'US$';
+export type TDecimalSeparators = '.' | ',';
