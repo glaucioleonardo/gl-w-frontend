@@ -1,6 +1,6 @@
 {
   "name": "gl-w-frontend",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/bundle.js",
   "types": "lib/index.d.ts",
@@ -17,6 +17,7 @@
     "build-index": "tsc -p ./tsconfig-index.json",
     "build-es6": "tsc -p ./tsconfig-es6.json",
     "build": "npm run build-es6 && npm run build-index",
+
     "lib-array": "npm run production --prefix D:\\_local-development\\_glaucio\\packages\\gl-w-frontend\\src\\lib\\scripts\\core\\services\\array",
     "lib-attachment": "npm run production --prefix D:\\_local-development\\_glaucio\\packages\\gl-w-frontend\\src\\lib\\scripts\\core\\services\\attachment",
     "lib-browser": "npm run production --prefix D:\\_local-development\\_glaucio\\packages\\gl-w-frontend\\src\\lib\\scripts\\core\\services\\browser",
@@ -32,7 +33,9 @@
     "lib-string": "npm run production --prefix D:\\_local-development\\_glaucio\\packages\\gl-w-frontend\\src\\lib\\scripts\\core\\services\\string",
     "lib-url": "npm run production --prefix D:\\_local-development\\_glaucio\\packages\\gl-w-frontend\\src\\lib\\scripts\\core\\services\\url",
     "lib-exp-excel": "npm run production --prefix D:\\_local-development\\_glaucio\\packages\\gl-w-frontend\\src\\lib\\scripts\\services\\export\\excel",
+
     "lib-production-all": "npm run production && npm run lib-array && npm run lib-attachment && npm run lib-browser && npm run lib-combobox && npm run lib-data && npm run lib-date && npm run lib-elements && npm run lib-image && npm run lib-input && npm run lib-internationalization && npm run lib-menu && npm run lib-number && npm run lib-string && npm run lib-url && npm run lib-exp-excel",
+
 
     "lib-array-i": "npm i --prefix D:\\_local-development\\_glaucio\\packages\\gl-w-frontend\\src\\lib\\scripts\\core\\services\\array",
     "lib-attachment-i": "npm i --prefix D:\\_local-development\\_glaucio\\packages\\gl-w-frontend\\src\\lib\\scripts\\core\\services\\attachment",
@@ -52,6 +55,7 @@
 
     "lib-i-all": "npm i && npm run lib-array-i && npm run lib-attachment-i && npm run lib-browser-i && npm run lib-combobox-i && npm run lib-data-i && npm run lib-date-i && npm run lib-elements-i && npm run lib-image-i && npm run lib-input-i && npm run lib-internationalization-i && npm run lib-menu-i && npm run lib-number-i && npm run lib-string-i && npm run lib-url-i && npm run lib-exp-excel-i",
 
+
     "lib-array-pub": "cd D:\\_local-development\\_glaucio\\packages\\gl-w-frontend\\src\\lib\\scripts\\core\\services\\array && npm publish",
     "lib-attachment-pub": "cd D:\\_local-development\\_glaucio\\packages\\gl-w-frontend\\src\\lib\\scripts\\core\\services\\attachment && npm publish",
     "lib-browser-pub": "cd D:\\_local-development\\_glaucio\\packages\\gl-w-frontend\\src\\lib\\scripts\\core\\services\\browser && npm publish",
@@ -70,6 +74,7 @@
 
     "lib-pub-all": "npm publish && npm run lib-array-pub && npm run lib-attachment-pub && npm run lib-browser-pub && npm run lib-combobox-pub && npm run lib-data-pub && npm run lib-date-pub && npm run lib-elements-pub && npm run lib-image-pub && npm run lib-input-pub && npm run lib-internationalization-pub && npm run lib-menu-pub && npm run lib-number-pub && npm run lib-string-pub && npm run lib-url-pub && npm run lib-exp-excel-pub",
     "lib-pub-all-B": "npm publish & npm run lib-array-pub & npm run lib-attachment-pub & npm run lib-browser-pub & npm run lib-combobox-pub & npm run lib-data-pub & npm run lib-date-pub & npm run lib-elements-pub & npm run lib-image-pub & npm run lib-input-pub & npm run lib-internationalization-pub & npm run lib-menu-pub & npm run lib-number-pub & npm run lib-string-pub & npm run lib-url-pub & npm run lib-exp-excel-pub",
+
     "lib-run-all": "npm run lib-i-all && npm run lib-production-all && npm run lib-pub-all"
   },
   "repository": {
@@ -104,23 +109,18 @@
   "author": "Gláucio Leonardo Sant'ana",
   "license": "ISC",
   "homepage": "https://www.glauciosantana.com",
-  "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.24.5",
-    "@babel/core": "^7.24.5",
-    "@babel/preset-env": "^7.24.5",
+    "@angular-eslint/eslint-plugin": "^17.3.0",
+    "@angular-eslint/eslint-plugin-template": "^17.3.0",
     "@types/node": "^16.10.9",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
-    "@typescript-eslint/eslint-plugin-tslint": "^7.0.2",
     "@typescript-eslint/parser": "^7.8.0",
-    "eslint": "^8.56.0",
-    "@angular-eslint/builder": "14.4.0",
-    "@angular-eslint/eslint-plugin": "14.4.0",
-    "@angular-eslint/eslint-plugin-template": "14.4.0",
-    "@angular-eslint/schematics": "14.4.0",
-    "@angular-eslint/template-parser": "14.4.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^48.2.3",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
     "shx": "^0.3.4",
-    "tslint": "^6.1.3",
     "typescript": "^4.7.4"
   }
 }
