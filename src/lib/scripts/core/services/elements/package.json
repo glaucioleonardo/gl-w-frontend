@@ -1,6 +1,6 @@
 {
   "name": "gl-w-elements-frontend",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/elements/src/index.js",
   "types": "lib/elements/src/index.d.ts",
@@ -33,10 +33,11 @@
   "license": "ISC",
   "homepage": "https://www.glauciosantana.com",
   "dependencies": {
-    "decimal.js": "^10.4.3",
-    "moment": "^2.30.1"
+
   },
-  "devDependencies": {
+  "peerDependencies": {
+    "decimal.js": "^10.4.3",
+    "moment": "^2.30.1",
     "@angular-eslint/eslint-plugin": "^17.3.0",
     "@angular-eslint/eslint-plugin-template": "^17.3.0",
     "@types/node": "^18.10.0",
@@ -48,6 +49,22 @@
     "eslint-plugin-jsdoc": "^48.2.3",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "shx": "^0.3.4",
-    "typescript": "^4.9.5"
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "decimal.js": "^10.4.3",
+    "moment": "^2.30.1",
+    "@angular-eslint/eslint-plugin": "^17.3.0",
+    "@angular-eslint/eslint-plugin-template": "^17.3.0",
+    "@types/node": "^18.10.0",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^48.2.3",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "shx": "^0.3.4",
+    "typescript": "^5.1.6"
   }
 }

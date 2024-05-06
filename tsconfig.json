@@ -13,9 +13,7 @@
       "./@types"
     ],
     "paths": {
-      "inputmask": [
-        "node_modules/inputmask/dist/inputmask.min.js"
-      ]
+
     }
   },
   "exclude": [
