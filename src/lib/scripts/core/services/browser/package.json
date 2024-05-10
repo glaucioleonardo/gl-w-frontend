@@ -1,6 +1,6 @@
 {
   "name": "gl-w-browser-frontend",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/browser/src/index.js",
   "types": "lib/browser/src/index.d.ts",
@@ -33,14 +33,13 @@
   "license": "ISC",
   "homepage": "https://www.glauciosantana.com",
   "dependencies": {
-
+    "screenfull": "^6.0.2"
   },
   "peerDependencies": {
     "screenfull": "^6.0.2",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "screenfull": "^6.0.2",
     "@angular-eslint/eslint-plugin": "^17.4.0",
     "@angular-eslint/eslint-plugin-template": "^17.4.0",
     "@types/node": "^20.9.0",

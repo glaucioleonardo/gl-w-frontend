@@ -1,6 +1,6 @@
 {
   "name": "gl-w-data-frontend",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

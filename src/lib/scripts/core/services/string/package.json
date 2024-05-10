@@ -1,6 +1,6 @@
 {
   "name": "gl-w-string-frontend",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/string/src/index.js",
   "types": "lib/string/src/index.d.ts",

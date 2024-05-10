@@ -1,6 +1,6 @@
 {
   "name": "gl-w-number-frontend",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/number/src/index.js",
   "types": "lib/number/src/index.d.ts",
@@ -33,14 +33,13 @@
   "license": "ISC",
   "homepage": "https://www.glauciosantana.com",
   "dependencies": {
-
+    "decimal.js": "^10.4.3"
   },
   "peerDependencies": {
     "decimal.js": "^10.4.3",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "decimal.js": "^10.4.3",
     "@angular-eslint/eslint-plugin": "^17.4.0",
     "@angular-eslint/eslint-plugin-template": "^17.4.0",
     "@types/node": "^20.9.0",
