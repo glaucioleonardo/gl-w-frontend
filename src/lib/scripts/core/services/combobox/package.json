@@ -1,6 +1,6 @@
 {
   "name": "gl-w-combobox-frontend",
-  "version": "6.0.1",
+  "version": "6.0.2",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/combobox/src/index.js",
   "types": "lib/combobox/src/index.d.ts",
@@ -34,12 +34,12 @@
   "homepage": "https://www.glauciosantana.com",
   "dependencies": {
     "decimal.js": "^10.4.3",
-    "moment": "^2.30.1"
+    "moment": "^2.24.0"
   },
   "peerDependencies": {
     "typescript": "^5.3.3",
     "decimal.js": "^10.4.3",
-    "moment": "^2.30.1"
+    "moment": "^2.24.0"
   },
   "devDependencies": {
     "@angular-eslint/eslint-plugin": "^17.4.0",

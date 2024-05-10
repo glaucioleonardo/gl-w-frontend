@@ -1,6 +1,6 @@
 {
   "name": "gl-w-excel-frontend",
-  "version": "6.0.1",
+  "version": "6.0.2",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/services/export/excel/src/index.js",
   "types": "lib/services/export/excel/src/index.d.ts",
@@ -34,13 +34,13 @@
   "homepage": "https://www.glauciosantana.com",
   "dependencies": {
     "decimal.js": "^10.4.3",
-    "moment": "^2.30.1",
+    "moment": "^2.24.0",
     "rxjs": "^7.8.0",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"
   },
   "peerDependencies": {
     "decimal.js": "^10.4.3",
-    "moment": "^2.30.1",
+    "moment": "^2.24.0",
     "rxjs": "^7.8.0",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz",
     "typescript": "^5.3.3"
