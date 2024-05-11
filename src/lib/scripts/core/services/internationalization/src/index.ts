@@ -1,7 +1,7 @@
 export {
-    IInternationalizationList, TCountryLanguage, TCountryName, TCurrencyCode, TCurrentFullName
+  IInternationalizationList, TCountryLanguage, TCountryName, TCurrencyCode, TCurrentFullName
 } from './core-services-internationalization.interface';
 
 export {
-    InternationalCore
+  InternationalCore
 } from './core-services-internationalization.service';

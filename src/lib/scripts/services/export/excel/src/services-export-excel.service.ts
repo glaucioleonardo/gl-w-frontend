@@ -2,10 +2,8 @@ import { Subject } from 'rxjs';
 import { DateGet } from '../../../../core/services/date/src';
 
 import { IArrayMatrixToExcel, TExcelFileName, IExcelResult, TExcelExport, IExcelExportSingleArray, IExcelExportMultipleArray, IExcelJsonToFileProps } from './services-export-excel.interface';
-import { DataConversor } from '../../../../core/services/data/src';
-
-// tslint:disable-next-line:variable-name
-const Excel = require('xlsx/dist/xlsx.mini.min');
+import { DataConverter } from '../../../../core/services/data/src';
+import { read, writeFile, write, utils } from 'xlsx'
 
 class Core {
   /**
@@ -14,19 +12,20 @@ class Core {
    * @param sheet Sheet index: Default 0.
    */
   excelFileToJson(file: File, sheet: number = 0): Promise<object> {
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     return  new Promise(async resolve => {
       const fileArray = await file.arrayBuffer();
 
       const reader = new FileReader();
-      reader.onload = (e) => {
+      reader.onload = () => {
         const data = new Uint8Array(fileArray);
-        const workbook = Excel.read(data, {
+        const workbook = read(data, {
           type: 'array',
           sheets: sheet
         });
 
         const workbookName = workbook.SheetNames[sheet];
-        const json = Excel.utils.sheet_to_json(workbook.Sheets[workbookName]);
+        const json = utils.sheet_to_json(workbook.Sheets[workbookName]);
 
         resolve(json);
       };
@@ -37,17 +36,18 @@ class Core {
   jsonToFile(userData: any[], sheetName: string, fileName: string, properties: IExcelJsonToFileProps): Promise<File> {
     return new Promise(resolve => {
       const currentDate = DateGet.currentDateString('YYYYMMDD_HHmmss');
-      const _fileName = fileName == null ? `Export ${currentDate}` : `${fileName}`;
-      const fileNameWidthDate = `${_fileName} ${currentDate}.xlsx`;
+      const internalFileName = fileName == null ? `Export ${currentDate}` : `${fileName}`;
+      const fileNameWidthDate = `${internalFileName} ${currentDate}.xlsx`;
 
-      const ws = Excel.utils.json_to_sheet(userData);
+      const ws = utils.json_to_sheet(userData);
 
       // Add to workbook
-      const wb = Excel.utils.book_new();
-      Excel.utils.book_append_sheet(wb, ws, 'Base');
+      const wb = utils.book_new();
+      utils.book_append_sheet(wb, ws, 'Base');
 
       // Generate a XLSX file
-      const file = Excel.write(wb, {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      const file = write(wb, {
         Props: {
           Title: properties.Title,
           Author: properties.Author,
@@ -59,7 +59,8 @@ class Core {
       });
 
       const type = 'application/octet-stream';
-      const content = new Blob([DataConversor.binaryStringToArrayBuffer(file)], { type });
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      const content = new Blob([DataConverter.binaryStringToArrayBuffer(file)], { type });
 
       const excelFile = new File([content], fileNameWidthDate, {
         lastModified: new Date().getMilliseconds(),
@@ -70,10 +71,11 @@ class Core {
     })
   }
 }
-// tslint:disable-next-line:variable-name
-export const ExcelConversor = new Core();
+
+export const ExcelConverter = new Core();
 
 class Export {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
   status$: Subject<string> = new Subject();
 
   private static async saveFile(content: any[], sheetName: string, _fileName: TExcelFileName = null): Promise<IExcelResult> {
@@ -81,14 +83,14 @@ class Export {
     const fileName = _fileName == null ? `Export ${currentDate}` : `${_fileName}`;
     const fileNameWidthDate = `${fileName} ${currentDate}.xlsx`;
 
-    const ws = Excel.utils.json_to_sheet(content);
+    const ws = utils.json_to_sheet(content);
 
     // Add to workbook
-    const wb = Excel.utils.book_new();
-    Excel.utils.book_append_sheet(wb, ws, sheetName);
+    const wb = utils.book_new();
+    utils.book_append_sheet(wb, ws, sheetName);
 
     // Generate a XLSX file
-    await Excel.writeFile(wb, fileNameWidthDate, { cellStyles: true });
+    await writeFile(wb, fileNameWidthDate, { cellStyles: true });
     ExportExcel.clearSubject()
     return { code: 200, message: 'File saved successfully' };
   }
@@ -97,14 +99,16 @@ class Export {
     const currentFileName = fileName == null ? `Export ${currentDate}` : `${fileName}`;
     const fileNameWidthDate = `${currentFileName} ${currentDate}.xlsx`;
 
-    const wb: any = Excel.utils.book_new();
+    const wb: any = utils.book_new();
 
     for (const sheet of data) {
-      const ws = Excel.utils.json_to_sheet(sheet.content);
-      Excel.utils.book_append_sheet(wb, ws, sheet.sheetName);
+      const ws = utils.json_to_sheet(sheet.content);
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      utils.book_append_sheet(wb, ws, sheet.sheetName);
     }
 
-    await Excel.writeFile(wb, fileNameWidthDate, { cellStyles: true });
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    await writeFile(wb, fileNameWidthDate, { cellStyles: true });
     ExportExcel.clearSubject()
 
     return { code: 200, message: 'File saved successfully' };
@@ -141,8 +145,10 @@ class Export {
   }
 
   private async exportExcel(type: TExcelExport, singleData: IExcelExportSingleArray, multipleData: IExcelExportMultipleArray): Promise<string> {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
     this.status$.next('Creating Excel workbook...');
 
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     return new Promise(async (resolve) => {
       let result: IExcelResult;
 
@@ -152,6 +158,7 @@ class Export {
         result = await Export.saveFileFromMultiple(multipleData.data, multipleData.fileName);
       }
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-call
       this.status$.next(result.message);
 
       if (result.code === 200) {
@@ -163,8 +170,9 @@ class Export {
   }
 
   private clearSubject() {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-return
     this.status$.observers.map(x => x.complete());
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const ExportExcel = new Export();

@@ -18,7 +18,7 @@ class Remove {
     }
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const ElementRemove = new Remove();
 
 class Selector {
@@ -26,7 +26,7 @@ class Selector {
     return document.querySelector(className);
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const ElementSelector = new Selector();
 
 class Highlight {
@@ -65,7 +65,7 @@ class Highlight {
     }
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const ElementHighlight = new Highlight();
 
 class Dragging {
@@ -100,5 +100,5 @@ class Dragging {
     });
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const ElementDragging = new Dragging();

@@ -1,7 +1,7 @@
 export {
-    IImageUpdate
+  IImageUpdate
 } from './core-services-image.interface';
 
 export {
-    ImageResize
+  ImageResize
 } from './core-services-image.service';

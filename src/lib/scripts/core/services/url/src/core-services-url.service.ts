@@ -3,7 +3,7 @@ class Core {
     return window.location.href;
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const UrlCore = new Core();
 
 class Decode {
@@ -366,7 +366,7 @@ class Decode {
       .replace(/&gt;/g, '>');
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const UrlDecode = new Decode();
 
 class Params {
@@ -381,5 +381,5 @@ class Params {
     return vars;
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const UrlParams = new Params();

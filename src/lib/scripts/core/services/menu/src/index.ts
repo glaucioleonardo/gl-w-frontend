@@ -1,3 +1,3 @@
 export {
-    IMenuButton, IFullScreenSrc, IFullScreenAlt
+  IMenuButton, IFullScreenSrc, IFullScreenAlt
 } from './core-services-menu.interfaces';

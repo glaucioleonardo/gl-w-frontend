@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-assignment,@typescript-eslint/ban-types */
 class Remove {
   duplicateLegacy(array: any[]): any[] {
     const unique = array.filter((item, index) => array.indexOf(item) === index);
@@ -70,7 +69,7 @@ class Remove {
     }
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const ArrayRemove = new Remove();
 
 class Sort {
@@ -115,5 +114,5 @@ class Sort {
     return newArray;
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const ArraySort = new Sort();

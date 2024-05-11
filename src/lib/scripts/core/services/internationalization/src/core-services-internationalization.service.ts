@@ -1435,5 +1435,5 @@ class Core {
     return list;
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const InternationalCore = new Core();

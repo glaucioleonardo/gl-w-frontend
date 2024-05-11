@@ -1,3 +1,3 @@
 export {
-    UrlDecode, UrlParams, UrlCore
+  UrlDecode, UrlParams, UrlCore
 } from './core-services-url.service';

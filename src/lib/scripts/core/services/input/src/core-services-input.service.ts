@@ -53,7 +53,7 @@ class Mask {
       return 'Unable to add mask to null field!'
     }
 
-    const mask = `0,00`;
+    const mask = '0,00';
     const groupSeparator: TDecimalSeparators = decimalSeparator === ',' ? '.' : ',';
 
     Inputmask({
@@ -75,7 +75,7 @@ class Mask {
       return 'Unable to add mask to null field!'
     }
 
-    const mask = `0`;
+    const mask = '0';
 
     Inputmask({
       alias: 'integer',
@@ -116,5 +116,5 @@ class Mask {
     return field != null;
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const InputMask = new Mask();

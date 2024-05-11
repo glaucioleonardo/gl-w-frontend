@@ -1,17 +1,18 @@
-/* eslint-disable @typescript-eslint/indent */
-import { IAttachmentData, IAttachmentFileInfo } from './core-services-attachment.interface';
+import {IAttachmentData, IAttachmentFileInfo} from './core-services-attachment.interface';
 
 class Convert {
   textFileToUrlImage(file: File): Promise<string> {
     return new Promise(resolve => {
       const fileReader = new FileReader();
       fileReader.addEventListener('load', (e: any) => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument,@typescript-eslint/no-unsafe-member-access
         resolve(e.target.result);
       });
 
       fileReader.readAsDataURL(file);
     });
   }
+
   fileToBase64Image(file: File): Promise<string> {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -21,7 +22,7 @@ class Convert {
     });
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const AttachmentConvert = new Convert();
 
 class Clean {
@@ -193,7 +194,7 @@ class Clean {
       .replace(/>/g, '');
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const AttachmentClean = new Clean();
 
 class Icon {
@@ -206,9 +207,10 @@ class Icon {
     if (url == null) {
       url = '../assets/img/icon/attachment-icons/';
     }
+
     const extension = this.extension(fileName);
 
-    let fileIcon;
+    let fileIcon: string;
 
     switch (extension.toLowerCase()) {
       case 'pdf': fileIcon = url + 'adobe-pdf.svg'; break;
@@ -257,14 +259,14 @@ class Icon {
       default: fileIcon = url + 'file.svg'; break;
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return fileIcon;
   }
+
   extension(fileName: string): string {
-    return fileName.substr(fileName.lastIndexOf('.') + 1).toLowerCase();
+    return fileName.substring(fileName.lastIndexOf('.') + 1).toLowerCase();
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const AttachmentIcon = new Icon();
 
 class Parser {
@@ -276,6 +278,7 @@ class Parser {
       .replace(/ /g, '')
       .split(',');
   }
+
   populateFiles(attachmentsData: IAttachmentData[]): IAttachmentFileInfo[] {
     const attachments: IAttachmentFileInfo[] = [];
     const userAttachments: IAttachmentData[] = attachmentsData.filter(x => x.new);
@@ -283,34 +286,38 @@ class Parser {
     for (const attachment of userAttachments) {
       if (attachment.file != null) {
         const name = AttachmentClean.cleanAttachmentText(attachment.file.name);
-        const content = new Blob([attachment.file], { type: attachment.file.type });
-        attachments.push({ name, content });
+        const content = new Blob([attachment.file], {type: attachment.file.type});
+        attachments.push({name, content});
       }
     }
 
     return attachments;
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const AttachmentParser = new Parser();
 
 class Validate {
   /** The user must include the attribute 'data-maxsize' in mb(megabyte); */
   maxSize = (input: HTMLInputElement): number => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
     const fileName = (input.attributes as any)['data-maxsize'].nodeValue;
+
     if (fileName) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       return parseInt(fileName, 10);
     } else {
       return 1024 * 45;
     }
   };
+
   file(input: HTMLInputElement, accepts: string[]): boolean {
     return this.fileArray(input.value, accepts);
   }
+
   fileArray(fileName: string, accepts: string[]): boolean {
     const idxDot = fileName.lastIndexOf('.') + 1;
-    const extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+    const extFile = fileName.substring(idxDot, fileName.length).toLowerCase();
 
     if (accepts.length === 1 && accepts[0] === '*') {
       return true;
@@ -337,6 +344,7 @@ class Validate {
       return false;
     }
   }
+
   fileSizeFromArray(input: HTMLInputElement, file: File): boolean {
     if (file != null) {
       const fileSize = file.size / 1024;
@@ -369,5 +377,5 @@ class Validate {
     return false;
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const AttachmentValidate = new Validate();

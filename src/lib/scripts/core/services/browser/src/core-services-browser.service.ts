@@ -65,7 +65,7 @@ class FullScreen {
     return screenfull.isEnabled;
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const BrowserFullScreen = new FullScreen();
 
 class Version {
@@ -79,12 +79,12 @@ class Version {
     return navigator.appVersion.indexOf('MSIE 10') !== -1;
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const BrowserVersion = new Version();
 
 class ViewPort {
   setFullHeight(): void {
-    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    // First we get the viewport height, and we multiply it by 1% to get a value for a vh unit
     const vh = window.innerHeight * 0.01;
     // Then we set the value in the --vh custom property to the root of the document
     document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -101,7 +101,7 @@ class ViewPort {
   }
 
   setFullWidth(): void {
-    // First we get the viewport width and we multiple it by 1% to get a value for a vw unit
+    // First we get the viewport width, and we multiply it by 1% to get a value for a vw unit
     const vw = window.innerWidth * 0.01;
     // Then we set the value in the --vh custom property to the root of the document
     document.documentElement.style.setProperty('--vw', `${vw}px`);
@@ -117,5 +117,5 @@ class ViewPort {
     });
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const BrowserViewPort = new ViewPort();

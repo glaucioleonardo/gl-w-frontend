@@ -17,6 +17,7 @@
     "build-index": "tsc -p ./tsconfig-index.json",
     "build-es6": "tsc -p ./tsconfig-es6.json",
     "build": "npm run build-es6 && npm run build-index",
+
     "lib-array": "cd D:\\_local-development\\_glaucio\\packages\\gl-w-frontend\\src\\lib\\scripts\\core\\services\\array && npm run production",
     "lib-attachment": "cd D:\\_local-development\\_glaucio\\packages\\gl-w-frontend\\src\\lib\\scripts\\core\\services\\attachment && npm run production",
     "lib-browser": "cd D:\\_local-development\\_glaucio\\packages\\gl-w-frontend\\src\\lib\\scripts\\core\\services\\browser && npm run production",
@@ -73,7 +74,6 @@
 
     "lib-pub-all": "npm publish && npm run lib-array-pub && npm run lib-attachment-pub && npm run lib-browser-pub && npm run lib-combobox-pub && npm run lib-data-pub && npm run lib-date-pub && npm run lib-elements-pub && npm run lib-image-pub && npm run lib-input-pub && npm run lib-internationalization-pub && npm run lib-menu-pub && npm run lib-number-pub && npm run lib-string-pub && npm run lib-url-pub && npm run lib-exp-excel-pub",
     "lib-pub-all-B": "npm publish & npm run lib-array-pub & npm run lib-attachment-pub & npm run lib-browser-pub & npm run lib-combobox-pub & npm run lib-data-pub & npm run lib-date-pub & npm run lib-elements-pub & npm run lib-image-pub & npm run lib-input-pub & npm run lib-internationalization-pub & npm run lib-menu-pub & npm run lib-number-pub & npm run lib-string-pub & npm run lib-url-pub & npm run lib-exp-excel-pub",
-
     "lib-run-all": "npm run lib-i-all && npm run lib-production-all && npm run lib-pub-all-B"
   },
   "repository": {
@@ -127,8 +127,6 @@
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"
   },
   "devDependencies": {
-    "@angular-eslint/eslint-plugin": "^17.4.0",
-    "@angular-eslint/eslint-plugin-template": "^17.4.0",
     "@types/inputmask": "^5.0.7",
     "@types/node": "^20.9.0",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
@@ -136,9 +134,9 @@
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsdoc": "^48.2.3",
+    "eslint-plugin-jsdoc": "^48.2.4",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "shx": "^0.3.4",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.5"
   }
 }

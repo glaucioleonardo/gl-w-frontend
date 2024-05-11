@@ -6,7 +6,7 @@ It represents the closest reasonable ESLint configuration to this
 project's original TSLint configuration.
 
 We recommend eventually switching this configuration to extend from
-the recommended rulesets in typescript-eslint. 
+the recommended rulesets in typescript-eslint.
 https://github.com/typescript-eslint/tslint-to-eslint-config/blob/master/docs/FAQs.md
 
 Happy linting! 💖
@@ -18,8 +18,7 @@ module.exports = {
     },
     "extends": [
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "prettier"
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -28,46 +27,12 @@ module.exports = {
     },
     "plugins": [
         "eslint-plugin-import",
-        "@angular-eslint/eslint-plugin",
         "eslint-plugin-jsdoc",
-        "@angular-eslint/eslint-plugin-template",
         "eslint-plugin-prefer-arrow",
         "@typescript-eslint"
     ],
     "root": true,
     "rules": {
-        "@angular-eslint/component-class-suffix": "error",
-        "@angular-eslint/component-selector": [
-            "error",
-            {
-                "type": "element",
-                "prefix": "app",
-                "style": "kebab-case"
-            }
-        ],
-        "@angular-eslint/contextual-lifecycle": "error",
-        "@angular-eslint/directive-class-suffix": "error",
-        "@angular-eslint/directive-selector": [
-            "error",
-            {
-                "type": "attribute",
-                "prefix": "app",
-                "style": "camelCase"
-            }
-        ],
-        "@angular-eslint/no-conflicting-lifecycle": "error",
-        "@angular-eslint/no-host-metadata-property": "error",
-        "@angular-eslint/no-input-rename": "error",
-        "@angular-eslint/no-inputs-metadata-property": "error",
-        "@angular-eslint/no-output-native": "error",
-        "@angular-eslint/no-output-on-prefix": "error",
-        "@angular-eslint/no-output-rename": "error",
-        "@angular-eslint/no-outputs-metadata-property": "error",
-        "@angular-eslint/template/banana-in-box": "error",
-        "@angular-eslint/template/eqeqeq": "error",
-        "@angular-eslint/template/no-negated-async": "error",
-        "@angular-eslint/use-lifecycle-interface": "error",
-        "@angular-eslint/use-pipe-transform-interface": "error",
         "@typescript-eslint/adjacent-overload-signatures": "error",
         "@typescript-eslint/array-type": "off",
         "@typescript-eslint/ban-types": [
@@ -105,7 +70,7 @@ module.exports = {
             }
         ],
         "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/indent": "error",
+        "@typescript-eslint/indent": ["error", 2],
         "@typescript-eslint/member-ordering": "error",
         "@typescript-eslint/naming-convention": [
             "off",
@@ -242,7 +207,7 @@ module.exports = {
         "indent": "off",
         "jsdoc/check-alignment": "error",
         "jsdoc/check-indentation": "error",
-        "jsdoc/newline-after-description": "error",
+        "jsdoc/newline-after-description": "off",
         "jsdoc/no-types": "error",
         "max-classes-per-file": "off",
         "max-len": [
@@ -277,7 +242,8 @@ module.exports = {
                     "profile",
                     "profileEnd",
                     "timeStamp",
-                    "context"
+                    "context",
+                    "createTask"
                 ]
             }
         ],

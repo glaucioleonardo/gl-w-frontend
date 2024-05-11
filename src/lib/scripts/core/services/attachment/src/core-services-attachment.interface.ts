@@ -6,7 +6,8 @@ export interface IAttachmentData {
   file?: File;
   url?: string;
   icon?: string;
-  type?: string | 'image' | 'video';
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
+  type?: 'image' | 'video' | string;
 }
 
 export interface IAttachmentFileInfo {

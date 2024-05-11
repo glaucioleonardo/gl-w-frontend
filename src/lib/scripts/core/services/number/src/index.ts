@@ -1,7 +1,7 @@
 export {
-    TCurrencySymbolTypes, TDecimalSeparators
+  TCurrencySymbolTypes, TDecimalSeparators
 } from './core-services-number-interface';
 
 export {
-    NumberParse
+  NumberParse
 } from './core-services-number.service';

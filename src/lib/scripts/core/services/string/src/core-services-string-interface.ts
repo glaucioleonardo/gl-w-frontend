@@ -1,6 +1,6 @@
 export type TCurrencyNames =
   'euro' |
-  'dolar' |
+  'dollar' |
   'real' |
   'peso' |
   'peso-ar' |

@@ -2,11 +2,11 @@ import { IImageUpdate } from './core-services-image.interface';
 
 class Resize {
   /**
-   * @param data:
    * image: string
    * quality: (optional) float number => Default/Max 1.0, min 0.0
    * maxWidth: (optional) integer number => Default 1024px
    * maxHeight: (optional) integer number => Default 1024px
+   * @param data
    */
   base64(data: IImageUpdate): string {
     const base64 = data.image;
@@ -67,5 +67,5 @@ class Resize {
     return canvas.toDataURL('image/jpeg', quality);
   }
 }
-// tslint:disable-next-line:variable-name
+
 export const ImageResize = new Resize();

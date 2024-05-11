@@ -1,11 +1,11 @@
 export {
-    IComboBoxData
+  IComboBoxData
 } from './core-services-combobox.interface';
 
 export {
-    ComboBoxData,
-    ComboBoxDom,
-    ComboBoxCore
+  ComboBoxData,
+  ComboBoxDom,
+  ComboBoxCore
 } from './core-services-combobox.service';
 
 export * from  '../../date/src/index';

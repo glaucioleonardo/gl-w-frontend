@@ -10,5 +10,5 @@ class Core {
     middle: 'middle'
   };
 }
-// tslint:disable-next-line:variable-name
+
 export const SAlignments = new Core();

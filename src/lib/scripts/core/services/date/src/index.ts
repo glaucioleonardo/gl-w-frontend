@@ -1,9 +1,9 @@
 export {
-    IDateLocal, IDayMonthYear, IDaysOfMonth, IWeeksOfMonth, IDate, IUnityOfTime
+  IDateLocal, IDayMonthYear, IDaysOfMonth, IWeeksOfMonth, IDate, IUnityOfTime
 } from './core-services-date.interface';
 
 export {
-    DateGet, DatePicker, DateValidation, DateComparable
+  DateGet, DatePicker, DateValidation, DateComparable
 } from './core-services-date.service';
 
 

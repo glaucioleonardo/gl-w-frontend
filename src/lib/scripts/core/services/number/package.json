@@ -1,6 +1,6 @@
 {
   "name": "gl-w-number-frontend",
-  "version": "6.0.1",
+  "version": "6.1.0",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/number/src/index.js",
   "types": "lib/number/src/index.d.ts",
@@ -37,20 +37,11 @@
   },
   "peerDependencies": {
     "decimal.js": "^10.4.3",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "@angular-eslint/eslint-plugin": "^17.4.0",
-    "@angular-eslint/eslint-plugin-template": "^17.4.0",
     "@types/node": "^20.9.0",
-    "@typescript-eslint/eslint-plugin": "^7.8.0",
-    "@typescript-eslint/parser": "^7.8.0",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsdoc": "^48.2.3",
-    "eslint-plugin-prefer-arrow": "^1.2.3",
     "shx": "^0.3.4",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.5"
   }
 }

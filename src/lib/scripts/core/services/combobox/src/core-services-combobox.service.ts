@@ -7,11 +7,13 @@ class Core {
       const parent = combobox.parentNode;
 
       if (parent != null) {
-        const comboboxInput = parent.querySelector('input.custom-combobox-input') as HTMLInputElement;
+        const comboboxInput = parent.querySelector('input.custom-combobox-input');
         ElementRemove.childElements(combobox);
 
         if (!keepValue) {
           combobox.value = '';
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
           comboboxInput.value = '';
         }
 
@@ -36,8 +38,6 @@ class Core {
     });
   }
 }
-
-// tslint:disable-next-line:variable-name
 export const ComboBoxCore = new Core();
 
 class Data {
@@ -51,8 +51,6 @@ class Data {
     }
   }
 }
-
-// tslint:disable-next-line:variable-name
 export const ComboBoxData = new Data();
 
 class Dom {
@@ -61,7 +59,7 @@ class Dom {
     const input: HTMLInputElement | null = parent.querySelector('input');
 
     if (input == null) {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      // eslint-disable-next-line @typescript-eslint/no-base-to-string,@typescript-eslint/restrict-template-expressions
       console.error(`Input not found on current combobox group: ${parent}`);
     } else {
       if (disable) {
@@ -80,6 +78,4 @@ class Dom {
     }
   }
 }
-
-// tslint:disable-next-line:variable-name
 export const ComboBoxDom = new Dom();
