@@ -1,6 +1,6 @@
 {
   "name": "gl-w-browser-frontend",
-  "version": "6.1.0",
+  "version": "6.1.1",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/browser/src/index.js",
   "types": "lib/browser/src/index.d.ts",
@@ -36,7 +36,6 @@
     "screenfull": "^6.0.2"
   },
   "peerDependencies": {
-    "screenfull": "^6.0.2",
     "typescript": "^5.4.5"
   },
   "devDependencies": {

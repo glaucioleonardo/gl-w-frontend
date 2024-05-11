@@ -1,6 +1,6 @@
 {
   "name": "gl-w-date-frontend",
-  "version": "6.1.0",
+  "version": "6.1.1",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/date/src/index.js",
   "types": "lib/date/src/index.d.ts",
@@ -37,9 +37,7 @@
     "moment-range": "^4.0.2"
   },
   "peerDependencies": {
-    "typescript": "^5.4.5",
-    "moment": "^2.30.1",
-    "moment-range": "^4.0.2"
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
     "@types/node": "^20.9.0",
