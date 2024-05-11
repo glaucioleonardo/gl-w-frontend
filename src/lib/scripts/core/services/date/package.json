@@ -1,6 +1,6 @@
 {
   "name": "gl-w-date-frontend",
-  "version": "6.1.1",
+  "version": "6.1.2",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/date/src/index.js",
   "types": "lib/date/src/index.d.ts",
@@ -33,6 +33,7 @@
   "license": "ISC",
   "homepage": "https://www.glauciosantana.com",
   "dependencies": {
+    "decimal.js": "^10.4.3",
     "moment": "^2.30.1",
     "moment-range": "^4.0.2"
   },

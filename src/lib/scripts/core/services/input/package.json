@@ -1,6 +1,6 @@
 {
   "name": "gl-w-input-frontend",
-  "version": "6.1.1",
+  "version": "6.1.2",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/input/src/index.js",
   "types": "lib/input/src/index.d.ts",
@@ -34,7 +34,8 @@
   "license": "ISC",
   "homepage": "https://www.glauciosantana.com",
   "dependencies": {
-    "inputmask": "^5.0.8"
+    "inputmask": "^5.0.8",
+    "decimal.js": "^10.4.3"
   },
   "peerDependencies": {
     "typescript": "^5.4.5"

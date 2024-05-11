@@ -1,6 +1,6 @@
 {
   "name": "gl-w-elements-frontend",
-  "version": "6.1.0",
+  "version": "6.1.1",
   "description": "Common code for using among web front-end development such as ES6+ and TypeScript",
   "main": "lib/elements/src/index.js",
   "types": "lib/elements/src/index.d.ts",
@@ -32,7 +32,11 @@
   "author": "Gláucio Leonardo Sant'ana",
   "license": "ISC",
   "homepage": "https://www.glauciosantana.com",
-  "dependencies": {},
+  "dependencies": {
+    "decimal.js": "^10.4.3",
+    "moment": "^2.30.1",
+    "moment-range": "^4.0.2"
+  },
   "peerDependencies": {
     "typescript": "^5.4.5"
   },
