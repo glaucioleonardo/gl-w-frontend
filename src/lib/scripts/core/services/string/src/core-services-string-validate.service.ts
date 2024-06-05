@@ -1,7 +1,7 @@
 import { StringClean } from './core-services-string.service';
 
 class Validate {
-  validateEmail(email: string): boolean {
+  email(email: string): boolean {
     if (email == null || email.length === 0 || StringClean.cleanText(email).length === 0) {
       return false;
     }
