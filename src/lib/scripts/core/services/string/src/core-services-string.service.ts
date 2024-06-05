@@ -104,6 +104,27 @@ class Converter {
     }
     return splitStr.join(' ');
   }
+
+  stringNoSpecialCharacter(str: string, underscore: boolean = true, hyphen: boolean = true): string {
+    const regexNormalize: RegExp = /[\u0300-\u036f]/g;
+    const regexHyphen: RegExp = /-{2,}/g;
+    let regexOnlyAccepted: RegExp;
+
+    if (underscore && hyphen) {
+      regexOnlyAccepted = /[^A-Za-z0-9-_]/g;
+    } else if (underscore && !hyphen) {
+      regexOnlyAccepted = /[^A-Za-z0-9_]/g;
+    } else if (!underscore && hyphen) {
+      regexOnlyAccepted = /[^A-Za-z0-9-]/g;
+    } else {
+      regexOnlyAccepted = /[^A-Za-z0-9]/g;
+    }
+
+    return str.normalize('NFD')
+      .replace(regexNormalize,  '')
+      .replace(regexOnlyAccepted, '-')
+      .replace(regexHyphen, '-');
+  }
 }
 
 
