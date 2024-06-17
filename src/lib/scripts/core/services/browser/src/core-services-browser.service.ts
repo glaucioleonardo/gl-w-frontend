@@ -117,5 +117,38 @@ class ViewPort {
     });
   }
 }
-
 export const BrowserViewPort = new ViewPort();
+
+
+class Cursor {
+  hideWhenIdle(): void {
+    document.addEventListener('DOMContentLoaded', () => {
+      let idleMouseTimer: NodeJS.Timeout;
+      let forceMouseHide = false;
+
+      document.body.style.cursor = 'none';
+
+      // Your wrapper here
+      document.body.addEventListener('mousemove', () => {
+        if (forceMouseHide) {
+          return;
+        }
+
+        document.body.style.cursor = '';
+
+        clearTimeout(idleMouseTimer);
+
+        idleMouseTimer = setTimeout(() => {
+          document.body.style.cursor = 'none';
+
+          forceMouseHide = true;
+
+          setTimeout(() => {
+            forceMouseHide = false;
+          }, 200);
+        }, 1000);
+      });
+    });
+  }
+}
+export const BrowserCursor = new Cursor();
